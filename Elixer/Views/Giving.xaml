@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="{Binding Title}"
+             x:Class="Elixer.Views.Giving">
+    <ContentPage.Content>
+        <Grid x:Name="give" Margin="20">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout x:Name="topBody" Spacing="10" Margin="5">
+                <Label Text="{Binding talk}" FontSize="Caption" VerticalOptions="Start"/>
+                <Label Text="You can give your offerings, tithes and building seeds through any of these channels: "
+                       FontSize="Body" Grid.Row="1"/>
+                <Label Text="{Binding offering}" FontAttributes="Bold"/>
+                <Label Text="{Binding tithe}" FontAttributes="Bold"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.SignUpPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Grid.Row="0" Padding="10" x:Name="intro">
+                        <Label Text="Christ Love Fellowship" FontSize="Medium" VerticalOptions="Start"/>
+                        <Image Source="images.jpeg" HeightRequest="100" WidthRequest="100"
+                                   Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>-->
+                
+                    <Label x:Name="formtitle" Text="Sign Up form" Margin="0,20,0,0" 
+                           FontSize="Title" HorizontalOptions="CenterAndExpand" Grid.Row="0"/>
+                    <Grid Grid.Row="1" x:Name="form" Margin="15,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <!--<RowDefinition Height="30"/>-->
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <!--<ColumnDefinition Width="*"/>-->
+
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="40,10,0,10" x:Name="type">
+                            <Label Text="Register as:" FontSize="Large"/>
+                            <Picker x:Name="memtype" SelectedIndexChanged="Mem_SelectedIndexChanged" 
+                                    VerticalOptions="Start" Margin="-2,-8,0,0">
+                                <Picker.Items>
+                                    <x:String>Alumnus</x:String>
+                                    <x:String>Student</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <Grid Grid.Row="1">
+                            <Entry x:Name="fname" ReturnType="Next" Placeholder="firstname." Grid.Column="0"/>
+
+                            <Entry x:Name="sname" ReturnType="Next" Placeholder="surnname." Grid.Column="1"/>
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Entry x:Name="oname" ReturnType="Next" Placeholder="othername." Grid.Column="0"/>
+                            <Entry x:Name="uname" Placeholder="username." ReturnType="Next" Grid.Column="1"/>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Entry x:Name="email" ReturnType="Next" Placeholder="email." Grid.Column="0" Keyboard="Email"/>
+                            <Entry x:Name="phone" ReturnType="Next" Placeholder="phone number." Grid.Column="1" Keyboard="Numeric"/>
+                        </Grid>
+                        <Grid Grid.Row="4">
+                            <Entry x:Name="pass" ReturnType="Next" Placeholder="password." Grid.Column="0" IsPassword="True"/>
+
+                            <Entry x:Name="conpass" ReturnType="Next" Placeholder="confirm password." Grid.Column="1" IsPassword="True"/>
+
+                        </Grid>
+                        <Grid Grid.Row="5" x:Name="student">
+                            <Editor x:Name="haddy" Placeholder="hostel address." Grid.Column="0"/>
+                            <Entry x:Name="dept" ReturnType="Next" Placeholder="department." Grid.Column="1"/>
+                        </Grid>
+                        <Grid Grid.Row="5" x:Name="alumnus">
+                            <Editor x:Name="raddy" Placeholder="residential address." Grid.Column="0"/>
+                            <Entry x:Name="occupation" ReturnType="Next" Placeholder="occupation." Grid.Column="1"/>
+                        </Grid>
+                        <Grid Grid.Row="6">
+                            <StackLayout Orientation="Vertical" Grid.Column="0">
+                                <Label Text="Bithday:" VerticalOptions="StartAndExpand"/>
+                                <DatePicker x:Name="dob" Grid.Column="0" VerticalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout x:Name="gradyr" Orientation="Vertical" Grid.Column="1">
+                                <Label Text="Graduation Year:" VerticalOptions="StartAndExpand"/>
+                                <DatePicker x:Name="grad" VerticalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                        <Button Grid.Row="7" Text="Submit" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
+                                HorizontalOptions="Center" HeightRequest="35"/>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+            <StackLayout Orientation="Vertical" Grid.Row="1" HeightRequest="60" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" x:Name="typefirst">
+                <Label Text="Register as: " FontSize="Large" VerticalOptions="StartAndExpand"/>
+                <Picker x:Name="mem" SelectedIndexChanged="Mem_SelectedIndexChanged" Title="--Select--" VerticalOptions="EndAndExpand">
+                    <Picker.Items>
+                        <x:String>Alumnus</x:String>
+                        <x:String>Student</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <Label x:Name="label" Grid.Row="2" VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Not registered?" FontSize="Micro" />
+                            <Span Text="   "  />
+                            <Span Text="Log in" TextDecorations="Underline" 
+                                          TextColor="CadetBlue" FontSize="Micro" x:Name="loginBtn"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding clickCommand}" CommandParameter="Log in"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
