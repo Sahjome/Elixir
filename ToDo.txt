@@ -1,0 +1,33 @@
+Pages
+	Signup with OAuth0
+	Login with OAuth0
+	Master Page
+		Info
+		Giving with donate button-link to paystack
+		Announcement
+		Media
+			Videos
+			Audios
+			PDFs
+		Groups
+			Life Groups
+			Committee
+		Consultation
+		Settings
+
+WebService
+Pictures
+	facebook
+	google
+	clf logo
+HowTos
+	create a toast  message
+	make a hypertext
+	what to do on app resume
+	read pdfs from db
+	**dependent dropdown for the media type and then their acceptable extensions.***
+	using picker
+	download the clf file sent by pst tola
+	use command to change page
+	using bindingcontext
+	formatted string
