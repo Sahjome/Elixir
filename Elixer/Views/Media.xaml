@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:Elixer.Views"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.Media">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Announcements And Events" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent"/>
+            <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding media}"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="4,4,4,4" FlexLayout.Basis="{OnIdiom Phone='50%', Tablet='33%'}" FlexLayout.AlignSelf="Start">
+                            <view:MediaTemplate/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

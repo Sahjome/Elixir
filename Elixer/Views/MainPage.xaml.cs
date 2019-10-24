@@ -42,7 +42,18 @@ namespace Elixer.Views
                     case (int)MenuItemType.Announcements:
                         MenuPages.Add(id, new NavigationPage(new Announcement()));
                         break;
-
+                    case (int)MenuItemType.Media:
+                        MenuPages.Add(id, new NavigationPage(new Media()));
+                        break;
+                    case (int)MenuItemType.Groups:
+                        MenuPages.Add(id, new NavigationPage(new Groups()));
+                        break;
+                    case (int)MenuItemType.Counselling:
+                        MenuPages.Add(id, new NavigationPage(new Counselling()));
+                        break;
+                    case (int)MenuItemType.Settings:
+                        MenuPages.Add(id, new NavigationPage(new Settings()));
+                        break;
                 }
             }
 

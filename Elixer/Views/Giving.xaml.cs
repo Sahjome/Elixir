@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Elixer.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,9 +24,11 @@ namespace Elixer.Views
             Title = "Giving";
             
             BindingContext = give;
-            
+
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://rave.flutterwave.com/donate/yjxjx1izhuh7")));
         }
        
+        public ICommand OpenWebCommand { get; }
     }
 
     

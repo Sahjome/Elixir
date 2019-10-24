@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.AnnouncementDetail">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{Binding ann.title}" FontSize="Large"/>
+            <StackLayout Orientation="Horizontal" Spacing="20">
+                <Label Text="{Binding ann.type}" HorizontalOptions="Start" FontSize="Caption"/>
+                <Label Text="{Binding ann.updated_at}" HorizontalOptions="End" FontSize="Caption"/>
+            </StackLayout>
+            <Label Text="{Binding ann.description}" FontAttributes="Bold" FontSize="Medium" />
+            <Label Text="{Binding ann.details}" FontSize="Medium"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

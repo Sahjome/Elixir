@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Toast_iOS.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +122,11 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Word\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -130,8 +136,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="GemBox.Document">
+      <Version>31.0.0.1035</Version>
+    </PackageReference>
     <PackageReference Include="NETStandard.Library">
       <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.MediaManager">
+      <Version>0.8.11</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.MediaManager.Forms">
+      <Version>0.8.11</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.5.231</Version>
@@ -149,5 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clf.png" />
   </ItemGroup>
 </Project>

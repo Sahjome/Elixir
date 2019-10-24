@@ -4,18 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:view="clr-namespace:Elixer.Views"
-             xmlns:viewModel="clr-namespace:Elixer.ViewModels"
              mc:Ignorable="d"
              x:Class="Elixer.Views.Announcement">
 
-    <ContentPage.BindingContext>
-        <viewModel:AnnouncementViewModel/>
-    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <Label Text="Announcements And Events" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent"/>
-            <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding Items}"
+            <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding ann}"
                       RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"

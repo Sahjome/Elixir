@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Elixer.Models;
+using Elixer.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -20,7 +25,8 @@ namespace Elixer.Views
             formtitle.IsVisible = false;
             
         }
-        
+
+        string _sex;
         void Required()
         {
             List<Entry> entries = new List<Entry>
@@ -37,24 +43,17 @@ namespace Elixer.Views
                     dat.PlaceholderColor = Color.Red;
                 }
             }
-                
+               
         }
 
-        Dictionary<string, Entry> clope = new Dictionary<string, Entry>();
+        private void Sex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int sel = picker.SelectedIndex;
+            _sex = (sel == 0) ? "female" : (sel == 1) ? "male" : null;
+            //_sex = sel.ToString();
 
-        //void Tery(Dictionary<string, object> data)
-        //{
-        //    clope.Add(fname.Text, fname);
-        //    clope.Add(sname.Text, sname);
-        //    foreach(Entry dat in clope)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(dat.t))
-        //        {
-        //            entr.PlaceholderColor = Color.Red;
-        //        }
-        //    }
-        //}
-        
+        }
         void Mover()
         {
             fname.Focus();
@@ -116,18 +115,17 @@ namespace Elixer.Views
 
         }
 
-        
+       
         public async void Submit_Clicked(object sender, EventArgs e)
         {
 
             //check entry
             if (string.IsNullOrWhiteSpace(fname.Text) || string.IsNullOrWhiteSpace(sname.Text) || 
                 string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(phone.Text) || 
-                string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(uname.Text))
+                string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(uname.Text) || string.IsNullOrEmpty(_sex))
             {
                 await DisplayAlert("Error", "Please make sure all required fields are filled properly ", "OK");
                 Required();
-                //Tery(fname);   
             }
             else
             {
@@ -135,21 +133,54 @@ namespace Elixer.Views
                 if(coin == true)
                 {
                     //member = memtype.SelectedItem.ToString();//for member type
-                    //verify that all the credentials are not in db and insert thru api
-                    await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
-                    await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+                    //verify that all the credentials are not in db and insert thru api 
+                    string status = memtype.SelectedItem.ToString();
+                    Profiles prof = new Profiles
+                    {
+                        Firstname = fname.Text = Details.Firstname,
+                        Surname = sname.Text = Details.Surname,
+                        Email = email.Text = Details.Email,
+                        Phone = phone.Text = Details.Phone,
+                        Username = uname.Text = Details.Username,
+                        Sex = _sex = Details.Sex,
+                        DOB = dob.Date = Details.DOB,
+                        Status = status = Details.Status,
+                        Dept = dept.Text = Details.Dept,
+                        Grad = grad.Date = Details.Grad,
+                        Othername = oname.Text = Details.Othername,
+                        Address = raddy.Text = haddy.Text = Details.Address
+                    };
+                    var json = JsonConvert.SerializeObject(prof);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpClient http = new HttpClient();
+                    var res = http.PostAsync("https://localhost:44388/api/profiles", content);
+                    Dictionary<string, object> data = new Dictionary<string, object>
+                    {
+                        {"Success", HttpStatusCode.OK },
+                        {"Failed", HttpStatusCode.BadRequest }
+                    };
+                    if (res.Result == data["Success"])
+                    {
+                        await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
+                        await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+
+                    }
+                    else
+                    {
+                        DependencyService.Get<Toast>().Show("Try Again");
+                    }
                 }
                 else
                 {
-                    //comp.IsVisible = true;
+                    await DisplayAlert("Error", "Please confirm your password","OK");
                 }
             }
         }
-        public async void Clickred()
+        public async Task Clickred()
         {
             await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
         }
 
-        public ICommand ClickCommand => new Command(async () => Clickred());
+        public ICommand ClickCommand => new Command(async () => await Clickred());
     }
 }

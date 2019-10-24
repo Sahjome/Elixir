@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.MediaTemplate">
+  <ContentView.Content>
+        <Frame Padding="0" VerticalOptions="Start" HasShadow="True">
+            <Grid Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding image}" Aspect="AspectFill"/>
+                <Grid Grid.Row="1" Padding="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                         
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="10,0" Grid.Column="0" HorizontalOptions="Start" Text="{Binding title}"/>
+                    <Label Margin="10,0" Grid.Column="1" Text="{Binding icon}" HorizontalOptions="End"/>
+                </Grid>
+               
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

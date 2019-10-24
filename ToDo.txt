@@ -31,3 +31,4 @@ HowTos
 	use command to change page
 	using bindingcontext
 	formatted string
+	download automatically when clicked

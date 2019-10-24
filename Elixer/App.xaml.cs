@@ -24,7 +24,7 @@ namespace Elixer
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new MainPage();
+            MainPage = new Announcement();
         }
 
         protected override void OnStart()

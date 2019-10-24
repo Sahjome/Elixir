@@ -1,0 +1,870 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JSend.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:JSend.WebApi.DelegatingActionDescriptor">
+            <summary>
+            Wraps around an instance of <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor"/>, delegating all member invocations
+            to that instance, and exposes a custom <see cref="T:System.Web.Http.Controllers.IActionResultConverter"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.DelegatingActionDescriptor.#ctor(System.Web.Http.Controllers.HttpActionDescriptor,System.Web.Http.Controllers.IActionResultConverter)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.DelegatingActionDescriptor"/>.</summary>
+            <param name="descriptor">The descriptor to which to delegate member invocations.</param>
+            <param name="resultConverter">The custom converter.</param>
+        </member>
+        <member name="P:JSend.WebApi.DelegatingActionDescriptor.InnerActionDescriptor">
+            <summary>Gets the inner <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor"/>.</summary>
+        </member>
+        <member name="P:JSend.WebApi.DelegatingActionDescriptor.ResultConverter">
+            <summary>
+            Gets the converter for correctly transforming the result of calling
+            <see cref="M:JSend.WebApi.DelegatingActionDescriptor.ExecuteAsync(System.Web.Http.Controllers.HttpControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)"/> into an instance of
+            <see cref="T:System.Net.Http.HttpResponseMessage"/>. 
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.DelegatingActionDescriptor.GetParameters">
+            <summary>Retrieves the parameters for the action descriptor.</summary>
+            <returns>The parameters for the action descriptor.</returns>
+        </member>
+        <member name="M:JSend.WebApi.DelegatingActionDescriptor.ExecuteAsync(System.Web.Http.Controllers.HttpControllerContext,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            Executes the described action and returns a <see cref="T:System.Threading.Tasks.Task`1"/> that once completed will
+            contain the return value of the action.
+            </summary>
+            <param name="controllerContext">The context.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that once completed will contain the return value of the action.</returns>
+        </member>
+        <member name="P:JSend.WebApi.DelegatingActionDescriptor.ActionName">
+            <summary>Gets the name of the action.</summary>
+            <returns>The name of the action.</returns>
+        </member>
+        <member name="P:JSend.WebApi.DelegatingActionDescriptor.ReturnType">
+            <summary>Gets the return type of the descriptor.</summary>
+            <returns>The return type of the descriptor.</returns>
+        </member>
+        <member name="T:JSend.WebApi.IJSendResult`1">
+            <summary>
+            Represents an action result that returns the specified JSend response with the specified status code.
+            </summary>
+            <typeparam name="TResponse">The type of the JSend response.</typeparam>
+        </member>
+        <member name="P:JSend.WebApi.IJSendResult`1.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.IJSendResult`1.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.IJSendResult`1.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="T:JSend.WebApi.JSendAuthorizeAttribute">
+            <summary>
+            An authorization filter that verifies the request's <see cref="T:System.Security.Principal.IPrincipal"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.JSendAuthorizeAttribute.HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Processes requests that fail authorization by creating a JSend formatted <see cref="F:System.Net.HttpStatusCode.Unauthorized"/> result.
+            </summary>
+            <param name="actionContext">The context.</param>
+        </member>
+        <member name="T:JSend.WebApi.JSendValueResultConverter`1">
+            <summary>
+            A converter for creating JSend formatted responses from actions that return an arbitrary T value.
+            </summary>
+            <typeparam name="T">The declared return type of an action.</typeparam>
+        </member>
+        <member name="M:JSend.WebApi.JSendValueResultConverter`1.Convert(System.Web.Http.Controllers.HttpControllerContext,System.Object)">
+            <summary>
+            Converts the specified <paramref name="actionResult"/> object to a <see cref="T:System.Net.Http.HttpResponseMessage"/>
+            with status code <see cref="F:System.Net.HttpStatusCode.OK"/> whose body contains a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/>.
+            </summary>
+            <param name="actionResult">The action result.</param>
+            <param name="controllerContext">The controller context.</param>
+            <returns>The newly created <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Responses.IJSendResponse">
+            <summary>A JSend response.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.IJSendResponse.Status">
+            <summary>Gets the status of this response.</summary>
+        </member>
+        <member name="T:JSend.WebApi.Responses.ErrorResponse">
+            <summary>
+            A JSend error response.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Responses.ErrorResponse.#ctor(System.String)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.ErrorResponse"/>.</summary>
+            <param name="message">An error message.</param>
+        </member>
+        <member name="M:JSend.WebApi.Responses.ErrorResponse.#ctor(System.String,System.Nullable{System.Int32})">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.ErrorResponse"/>.</summary>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="code">A numeric code corresponding to the error, if applicable.</param>
+        </member>
+        <member name="M:JSend.WebApi.Responses.ErrorResponse.#ctor(System.String,System.Object)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.ErrorResponse"/>.</summary>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="data">An optional generic container for any other information about the error.</param>
+        </member>
+        <member name="M:JSend.WebApi.Responses.ErrorResponse.#ctor(System.String,System.Nullable{System.Int32},System.Object)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.ErrorResponse"/>.</summary>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="code">A numeric code corresponding to the error, if applicable.</param>
+            <param name="data">An optional generic container for any other information about the error.</param>
+        </member>
+        <member name="P:JSend.WebApi.Responses.ErrorResponse.Status">
+            <summary>Gets the status of this response, always set to "error".</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.ErrorResponse.Message">
+            <summary>Gets the error message explaining what went wrong.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.ErrorResponse.Code">
+            <summary>Gets the numeric error code corresponding to the error.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.ErrorResponse.Data">
+            <summary>Gets the generic data container; null if not applicable.</summary>
+        </member>
+        <member name="T:JSend.WebApi.Responses.FailResponse">
+            <summary>A JSend fail response.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Responses.FailResponse.#ctor(System.Object)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.FailResponse"/>.</summary>
+            <param name="data">A wrapper for the details of why the request failed.</param>
+        </member>
+        <member name="P:JSend.WebApi.Responses.FailResponse.Status">
+            <summary>Gets the status of this response, always set to "fail".</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.FailResponse.Data">
+            <summary>Gets the wrapper for the details of why the request failed.</summary>
+        </member>
+        <member name="T:JSend.WebApi.Responses.SuccessResponse">
+            <summary>A JSend success response.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Responses.SuccessResponse.#ctor">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.SuccessResponse"/>.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Responses.SuccessResponse.#ctor(System.Object)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Responses.SuccessResponse"/>.</summary>
+            <param name="data">A wrapper for any data to be returned.</param>
+        </member>
+        <member name="P:JSend.WebApi.Responses.SuccessResponse.Status">
+            <summary>Gets the status of this response, always set to "success".</summary>
+        </member>
+        <member name="P:JSend.WebApi.Responses.SuccessResponse.Data">
+            <summary>Gets the wrapper for any data to be returned; null if no data is to be returned.</summary>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendRedirectToRouteResult">
+            <summary>
+            Represents an action result that performs route generation and returns a <see cref="F:JSend.WebApi.Results.JSendRedirectToRouteResult.SuccessResponse"/>
+            with status code <see cref="F:System.Net.HttpStatusCode.Redirect"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendRedirectToRouteResult.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendRedirectToRouteResult"/>.</summary>
+            <param name="routeName">The name of the route to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.RouteName">
+            <summary>Gets the name of the route to use for generating the URL.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.RouteValues">
+            <summary>Gets the route data to use for generating the URL.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectToRouteResult.UrlFactory">
+            <summary>Gets the factory to use to generate the route URL.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendRedirectToRouteResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendUnauthorizedResult">
+            <summary>
+            Represents an action result that returns a <see cref="F:JSend.WebApi.Results.JSendUnauthorizedResult.FailResponse"/> with status code <see cref="F:System.Net.HttpStatusCode.Unauthorized"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendUnauthorizedResult.#ctor(System.Collections.Generic.IEnumerable{System.Net.Http.Headers.AuthenticationHeaderValue},System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/>.</summary>
+            <param name="challenges">The WWW-Authenticate challenges.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendUnauthorizedResult.#ctor(System.Collections.Generic.IEnumerable{System.Net.Http.Headers.AuthenticationHeaderValue},System.Net.Http.HttpRequestMessage)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/>.</summary>
+            <param name="challenges">The WWW-Authenticate challenges.</param>
+            <param name="request">The request message which led to this result.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendUnauthorizedResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendUnauthorizedResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendUnauthorizedResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendUnauthorizedResult.Challenges">
+            <summary>Gets the WWW-Authenticate challenges.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendUnauthorizedResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> containing the created content
+            with status code <see cref="F:System.Net.HttpStatusCode.Created"/>.
+            </summary>
+            <typeparam name="T">The type of the created content.</typeparam>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},`0,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1"/>.</summary>
+            <param name="routeName">The name of the route to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="content">The content value to negotiate and format in the entity body.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.Content">
+            <summary>Gets the content value to format in the entity body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.RouteName">
+            <summary>Gets the name of the route to use for generating the URL.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.RouteValues">
+            <summary>Gets the route data to use for generating the URL.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.UrlFactory">
+            <summary>Gets the factory to use to generate the route URL.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendCreatedAtRouteResult`1.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendCreatedResult`1">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> containing the created content
+            with status code <see cref="F:System.Net.HttpStatusCode.Created"/>.
+            </summary>
+            <typeparam name="T">The type of the created content.</typeparam>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendCreatedResult`1.#ctor(System.Uri,`0,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendCreatedResult`1"/>.</summary>
+            <param name="location">The location at which the content has been created.</param>
+            <param name="content">The content value to negotiate and format in the entity body.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedResult`1.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedResult`1.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedResult`1.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedResult`1.Location">
+            <summary>Gets the location at which the content has been created.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendCreatedResult`1.Content">
+            <summary>Gets the content value to format in the entity body.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendCreatedResult`1.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendExceptionResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.ErrorResponse"/> containing the specified error details
+            with status code <see cref="F:System.Net.HttpStatusCode.InternalServerError"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendExceptionResult.#ctor(System.Exception,System.String,System.Nullable{System.Int32},System.Object,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/>.</summary>
+            <param name="exception">The exception to include in the the error.</param>
+            <param name="message">
+            An optional meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.
+            If none is provided, and if the controller's <see cref="P:System.Web.Http.Controllers.HttpRequestContext.IncludeErrorDetail"/> is set to <see langword="true"/>,
+            the exception's message will be used instead.
+            </param>
+            <param name="errorCode">
+            A numeric code corresponding to the error, if applicable.
+            </param>
+            <param name="data">
+            An optional generic container for any other information about the error.
+            If none is provided, and if the controller's <see cref="P:System.Web.Http.Controllers.HttpRequestContext.IncludeErrorDetail"/> is set to <see langword="true"/>,
+            the exception's details will be used instead.
+            </param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendExceptionResult.#ctor(System.Exception,System.String,System.Nullable{System.Int32},System.Object,System.Boolean,System.Net.Http.HttpRequestMessage)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/>.</summary>
+            <param name="exception">The exception to include in the the error.</param>
+            <param name="message">
+            An optional meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.
+            If none is provided, and if <paramref name="includeErrorDetail"/> is <see langword="true"/>,
+            the exception's message will be used instead.
+            </param>
+            <param name="errorCode">
+            A numeric code corresponding to the error, if applicable.
+            </param>
+            <param name="data">
+            An optional generic container for any other information about the error.
+            If none is provided, and if <paramref name="includeErrorDetail"/> is <see langword="true"/>,
+            the exception's details will be used instead.
+            </param>
+            <param name="includeErrorDetail">
+            <see langword="true"/> if the response should include exception messages/stack traces
+            when no <paramref name="message"/> or <paramref name="data"/> are provided; otherwise, <see langword="false"/>.
+            </param>
+            <param name="request">The request message which led to this result.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendExceptionResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendExceptionResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendExceptionResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendExceptionResult.Exception">
+            <summary>Gets the exception to include in the error.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendExceptionResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendInternalServerErrorResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.ErrorResponse"/> containing the specified error details
+            with status code <see cref="F:System.Net.HttpStatusCode.InternalServerError"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendInternalServerErrorResult.#ctor(System.String,System.Nullable{System.Int32},System.Object,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/>.</summary>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="errorCode">A numeric code corresponding to the error, if applicable.</param>
+            <param name="data"> An optional generic container for any other information about the error.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInternalServerErrorResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInternalServerErrorResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInternalServerErrorResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInternalServerErrorResult.Message">
+            <summary>Gets the error message explaining what went wrong.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendInternalServerErrorResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendNotFoundResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.FailResponse"/> with status code <see cref="F:System.Net.HttpStatusCode.BadRequest"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendNotFoundResult.#ctor(System.String,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendInvalidModelStateResult"/>.</summary>
+            <param name="reason">
+            The reason why the requested resource could not be found. If none is specified, a default message will be used instead.
+            </param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendNotFoundResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendNotFoundResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendNotFoundResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendNotFoundResult.Reason">
+            <summary>Gets the reason why the requested resource could not be found.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendNotFoundResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendRedirectResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> with status code <see cref="F:System.Net.HttpStatusCode.Redirect"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendRedirectResult.#ctor(System.Uri,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendRedirectResult"/>.</summary>
+            <param name="location">The location to which to redirect.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendRedirectResult.Location">
+            <summary>Gets the location to which to redirect.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendRedirectResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendResult`1">
+            <summary>
+            Represents an action result that returns the specified JSend response with the specified status code.
+            </summary>
+            <typeparam name="TResponse">The type of the JSend response.</typeparam>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendResult`1.#ctor(System.Net.HttpStatusCode,`0,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult"/>.</summary>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="response">The JSend response to format in the entity body.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendResult`1.#ctor(System.Net.HttpStatusCode,`0,System.Net.Http.HttpRequestMessage)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult"/>.</summary>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="response">The JSend response to format in the entity body.</param>
+            <param name="request">The request message which led to this result.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendResult`1.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendResult`1.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendResult`1.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendResult`1.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendBadRequestResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.FailResponse"/> with status code <see cref="F:System.Net.HttpStatusCode.BadRequest"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendBadRequestResult.#ctor(System.String,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendBadRequestResult"/>.</summary>
+            <param name="reason">The reason why the request could not be processed.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendBadRequestResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendBadRequestResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendBadRequestResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendBadRequestResult.Reason">
+            <summary>Gets the reason why the request could not be processed.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendBadRequestResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendInvalidModelStateResult">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.FailResponse"/> containing the specified model state errors
+            with status code <see cref="F:System.Net.HttpStatusCode.BadRequest"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendInvalidModelStateResult.#ctor(System.Web.Http.ModelBinding.ModelStateDictionary,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendInvalidModelStateResult"/>.</summary>
+            <param name="modelState">The invalid model state to include in the response's body as key-value pairs.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInvalidModelStateResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInvalidModelStateResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInvalidModelStateResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendInvalidModelStateResult.ModelState">
+            <summary>Gets the model state errors to include in the response.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendInvalidModelStateResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendOkResult">
+            <summary>
+            Represents an action result that returns a <see cref="F:JSend.WebApi.Results.JSendOkResult.SuccessResponse"/> with status code <see cref="F:System.Net.HttpStatusCode.OK"/>.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult.#ctor(System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult"/>.</summary>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult.#ctor(System.Net.Http.HttpRequestMessage)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult"/>.</summary>
+            <param name="request">The request message which led to this result.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Results.JSendOkResult`1">
+            <summary>
+            Represents an action result that returns a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> with the specified content and
+            with status code <see cref="F:System.Net.HttpStatusCode.OK"/>.
+            </summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult`1.#ctor(`0,System.Web.Http.ApiController)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult`1"/>.</summary>
+            <param name="content">The content value to format in the entity body.</param>
+            <param name="controller">The controller from which to obtain the dependencies needed for execution.</param>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult`1.#ctor(`0,System.Net.Http.HttpRequestMessage)">
+            <summary>Initializes a new instance of <see cref="T:JSend.WebApi.Results.JSendOkResult`1"/>.</summary>
+            <param name="content">The content value to format in the entity body.</param>
+            <param name="request">The request message which led to this result.</param>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult`1.Response">
+            <summary>Gets the response to be formatted into the message's body.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult`1.StatusCode">
+            <summary>Gets the HTTP status code for the response message.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult`1.Request">
+            <summary>Gets the request message which led to this result.</summary>
+        </member>
+        <member name="P:JSend.WebApi.Results.JSendOkResult`1.Content">
+            <summary>Gets the content value to format in the entity body.</summary>
+        </member>
+        <member name="M:JSend.WebApi.Results.JSendOkResult`1.ExecuteAsync(System.Threading.CancellationToken)">
+            <summary>Creates an <see cref="T:System.Net.Http.HttpResponseMessage"/> asynchronously.</summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task that, when completed, contains the <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="T:JSend.WebApi.Properties.StringResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.BadRequest_WhiteSpaceReason">
+            <summary>
+              Looks up a localized string similar to Reason cannot be an empty string..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.ConfigurationMustContainFormatter">
+            <summary>
+              Looks up a localized string similar to The controller&apos;s configuration must contain a formatter that supports the media type application/json..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.DefaultErrorMessage">
+            <summary>
+              Looks up a localized string similar to An error has occurred..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.ErrorResponse_WhiteSpaceMessage">
+            <summary>
+              Looks up a localized string similar to Message cannot be an empty string..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.NotFound_DefaultMessage">
+            <summary>
+              Looks up a localized string similar to The requested resource could not be found..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.NotFound_WhiteSpaceReason">
+            <summary>
+              Looks up a localized string similar to Reason cannot be an empty string..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.Request_RequestContextMustNotBeNull">
+            <summary>
+              Looks up a localized string similar to The request must have a request context..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.RequestNotAuthorized">
+            <summary>
+              Looks up a localized string similar to Authorization has been denied for this request..
+            </summary>
+        </member>
+        <member name="P:JSend.WebApi.Properties.StringResources.TypePropertyMustNotBeNull">
+            <summary>
+              Looks up a localized string similar to {0}.{1} must not be null..
+            </summary>
+        </member>
+        <member name="T:JSend.WebApi.ValueActionFilterAttribute">
+            <summary>
+            An action filter that selects a <see cref="T:JSend.WebApi.JSendValueResultConverter`1"/> as the action result converter for actions
+            that return an arbitrary T value.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.ValueActionFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Selects a <see cref="T:JSend.WebApi.JSendValueResultConverter`1"/> as the action result converter for actions
+            that return an arbitrary T value.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:JSend.WebApi.VoidActionFilterAttribute">
+            <summary>
+            An action filter that selects a <see cref="T:JSend.WebApi.JSendVoidResultConverter"/> as the action result converter for actions
+            that do not return a value.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.VoidActionFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Selects a <see cref="T:JSend.WebApi.JSendVoidResultConverter"/> as the action result converter for actions
+            that do not return a value.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+        <member name="T:JSend.WebApi.JSendApiController">
+            <summary>
+            Defines methods to easily create JSend formatted responses.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendOk">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendOkResult"/> (200 OK).</summary>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendOkResult"/>.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendOk``1(``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendOkResult`1"/> with the specified content.</summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+            <param name="content">The content value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendOkResult`1"/> with the specified content.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendBadRequest(System.String)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendBadRequestResult"/> (400 Bad Request) with the specified error message.</summary>
+            <param name="reason">The reason why the request could not be processed.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendBadRequestResult"/> with the specified error message.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendBadRequest(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendInvalidModelStateResult"/> (400 Bad Request) with the specified model state.</summary>
+            <param name="modelState">The invalid model state to include in the response's body as key-value pairs.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendInvalidModelStateResult"/> with the specified model state.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendCreated``1(System.Uri,``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendCreatedResult`1"/> (201 Created) with the specified values.</summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+            <param name="location">The location at which the content has been created.</param>
+            <param name="content">The content value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendCreatedResult`1"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendCreated``1(System.String,``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendCreatedResult`1"/> (201 Created) with the specified values.</summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+            <param name="location">The location at which the content has been created. Must be a relative or absolute URL.</param>
+            <param name="content">The content value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendCreatedResult`1"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendCreatedAtRoute``1(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1"/> (201 Created) with the specified values.</summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+            <param name="routeName">The name of the route to use to generate the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="content">The content value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendCreatedAtRoute``1(System.String,System.Object,``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1"/> (201 Created) with the specified values.</summary>
+            <typeparam name="T">The type of the content in the entity body.</typeparam>
+            <param name="routeName">The name of the route to use to generate the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="content">The content value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendCreatedAtRouteResult`1"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendInternalServerError(System.String,System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Creates a <see cref="T:JSend.WebApi.Results.JSendInternalServerErrorResult"/> (500 Internal Server Error) with the specified error message
+            and an optional error code and additional data.
+            </summary>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="errorCode">A numeric code corresponding to the error, if applicable.</param>
+            <param name="data"> An optional generic container for any other information about the error.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendInternalServerErrorResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendInternalServerError(System.Exception,System.String,System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Creates a <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/> (500 Internal Server Error) with the specified exception
+            and an optional error message, error code and additional data.
+            </summary>
+            <param name="exception">The exception to include in the error.</param>
+            <param name="message">
+            An optional meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.
+            If none is provided, and if <see cref="P:System.Web.Http.Controllers.HttpRequestContext.IncludeErrorDetail"/> is set to <see langword="true"/>,
+            the exception's message will be used instead.
+            </param>
+            <param name="errorCode">
+            A numeric code corresponding to the error, if applicable.
+            </param>
+            <param name="data">
+            An optional generic container for any other information about the error.
+            If none is provided, and if <see cref="P:System.Web.Http.Controllers.HttpRequestContext.IncludeErrorDetail"/> is set to <see langword="true"/>,
+            the exception's details will be used instead.
+            </param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendNotFound(System.String)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendNotFoundResult"/> (404 Not Found) with the specified error message.</summary>
+            <param name="reason">The reason why the requested resource could not be found.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendNotFoundResult"/> with the specified error message.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendNotFound">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendNotFoundResult"/> (404 Not Found).</summary>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendNotFoundResult"/>.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendRedirect(System.Uri)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendRedirectResult"/> (302 Found) with the specified location.</summary>
+            <param name="location">The location to which to redirect.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendRedirectResult"/> with the specified location.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendRedirect(System.String)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendRedirectResult"/> (302 Found) with the specified location.</summary>
+            <param name="location">The location to which to redirect.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendRedirectResult"/> with the specified location.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendRedirectToRoute(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendRedirectToRouteResult"/> (302 Found) with the specified values.</summary>
+            <param name="routeName">The name of the route to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendRedirectToRouteResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendRedirectToRoute(System.String,System.Object)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendRedirectToRouteResult"/> (302 Found) with the specified values.</summary>
+            <param name="routeName">The name of the route to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendRedirectToRouteResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendUnauthorized(System.Collections.Generic.IEnumerable{System.Net.Http.Headers.AuthenticationHeaderValue})">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/> (401 Unauthorized) with the specified challenge headers.</summary>
+            <param name="challenges">The WWW-Authenticate challenges.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendUnauthorized(System.Net.Http.Headers.AuthenticationHeaderValue[])">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/> (401 Unauthorized) with the specified challenge headers.</summary>
+            <param name="challenges">The WWW-Authenticate challenges.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendUnauthorizedResult"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSend``1(System.Net.HttpStatusCode,``0)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with the specified status code and JSend response.</summary>
+            <typeparam name="TResponse">The type of the JSend response in the entity body.</typeparam>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="response">The JSend response to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendSuccess(System.Net.HttpStatusCode,System.Object)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> and the specified status code and data.</summary>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="data">The data value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/> and the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendFail(System.Net.HttpStatusCode,System.Object)">
+            <summary>Creates a <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.FailResponse"/> and the specified status code and data.</summary>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="data">The data value to format in the entity body.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.FailResponse"/> and the specified values.</returns>
+        </member>
+        <member name="M:JSend.WebApi.JSendApiController.JSendError(System.Net.HttpStatusCode,System.String,System.Nullable{System.Int32},System.Object)">
+            <summary>
+            Creates a <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.ErrorResponse"/> and
+            the specified status code, error message, error code and data.
+            </summary>
+            <param name="statusCode">The HTTP status code for the response message.</param>
+            <param name="message">A meaningful, end-user-readable (or at the least log-worthy) message, explaining what went wrong.</param>
+            <param name="errorCode">A numeric code corresponding to the error, if applicable.</param>
+            <param name="data"> An optional generic container for any other information about the error.</param>
+            <returns>A <see cref="T:JSend.WebApi.Results.JSendResult`1"/> with a <see cref="T:JSend.WebApi.Responses.ErrorResponse"/> and the specified values.</returns>
+        </member>
+        <member name="T:JSend.WebApi.JSendExceptionFilterAttribute">
+            <summary>Represents an unhandled exception handler that provides JSend error responses.</summary>
+        </member>
+        <member name="M:JSend.WebApi.JSendExceptionFilterAttribute.OnExceptionAsync(System.Web.Http.Filters.HttpActionExecutedContext,System.Threading.CancellationToken)">
+            <summary>
+            Handles an exception by creating a <see cref="T:JSend.WebApi.Results.JSendExceptionResult"/> with the unhandled exception.
+            </summary>
+            <param name="actionExecutedContext">The context for the action.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JSend.WebApi.JSendVoidResultConverter">
+            <summary>
+            A converter for creating JSend formatted responses from actions that do not return a value.
+            </summary>
+        </member>
+        <member name="M:JSend.WebApi.JSendVoidResultConverter.Convert(System.Web.Http.Controllers.HttpControllerContext,System.Object)">
+            <summary>
+            Creates a new <see cref="T:System.Net.Http.HttpResponseMessage"/> with status code <see cref="F:System.Net.HttpStatusCode.OK"/>
+            whose body contains a <see cref="T:JSend.WebApi.Responses.SuccessResponse"/>.
+            </summary>
+            <param name="actionResult">The action result.</param>
+            <param name="controllerContext">The controller context.</param>
+            <returns>The newly created <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+    </members>
+</doc>

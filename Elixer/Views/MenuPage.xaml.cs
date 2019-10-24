@@ -23,7 +23,11 @@ namespace Elixer.Views
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.Giving, Title="Giving" },
-                new HomeMenuItem {Id = MenuItemType.Announcements, Title="Announcements" }
+                new HomeMenuItem {Id = MenuItemType.Announcements, Title="Announcements" },
+                new HomeMenuItem {Id = MenuItemType.Media, Title="Media" },
+                new HomeMenuItem {Id = MenuItemType.Groups, Title="Groups" },
+                new HomeMenuItem {Id = MenuItemType.Counselling, Title="Counselling" },
+                new HomeMenuItem {Id = MenuItemType.Settings, Title="Settings" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

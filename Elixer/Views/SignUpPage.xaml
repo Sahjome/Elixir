@@ -49,15 +49,27 @@
                             <!--<ColumnDefinition Width="*"/>-->
 
                         </Grid.ColumnDefinitions>
-                        <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="40,10,0,10" x:Name="type">
-                            <Label Text="Register as:" FontSize="Large"/>
-                            <Picker x:Name="memtype" SelectedIndexChanged="Mem_SelectedIndexChanged" 
+                        <StackLayout Orientation="Horizontal" Grid.Row="0" Spacing="30" x:Name="type">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                <Label Text="Register as:" FontSize="Medium"/>
+                                <Picker x:Name="memtype" SelectedIndexChanged="Mem_SelectedIndexChanged" 
                                     VerticalOptions="Start" Margin="-2,-8,0,0">
-                                <Picker.Items>
-                                    <x:String>Alumnus</x:String>
-                                    <x:String>Student</x:String>
-                                </Picker.Items>
-                            </Picker>
+                                    <Picker.Items>
+                                        <x:String>Alumnus</x:String>
+                                        <x:String>Student</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" x:Name="type">
+                                <Label Text="Register as:" FontSize="Medium"/>
+                                <Picker x:Name="sex" SelectedIndexChanged="Sex_SelectedIndexChanged" 
+                                    VerticalOptions="Start" Margin="-2,-8,0,0">
+                                    <Picker.Items>
+                                        <x:String>Female</x:String>
+                                        <x:String>Male</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
                         </StackLayout>
                         <Grid Grid.Row="1">
                             <Entry x:Name="fname" ReturnType="Next" Placeholder="firstname." Grid.Column="0"/>

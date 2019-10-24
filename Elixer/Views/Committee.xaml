@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Committee"
+             x:Class="Elixer.Views.Committee">
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="{Binding join}" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Margin="40,10,0,10" x:Name="type">
+                <Label Text="Register as:" FontSize="Large"/>
+                <Picker x:Name="group" SelectedIndexChanged="Group_SelectedIndexChanged" 
+                                    VerticalOptions="Start" Margin="-2,-8,0,0">
+                    <Picker.Items>
+                        <x:String>Church Office</x:String>
+                        <x:String>ForeRunner</x:String>
+                        <x:String>Special Duties</x:String>
+                        <x:String>Word House</x:String>
+                        <x:String>Watch Tower</x:String>
+                        <x:String>Firm Foundation</x:String>
+                        <x:String>Power And Sound</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <Button Grid.Row="2" Text="Submit" x:Name="submitBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
+                                HorizontalOptions="Center" HeightRequest="35"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

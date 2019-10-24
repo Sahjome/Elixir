@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using MediaManager.Forms.Platforms.Android;
+using MediaManager;
 
 namespace Elixer.Droid
 {
@@ -16,9 +18,10 @@ namespace Elixer.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            CrossMediaManager.Current.Init(this);
             base.OnCreate(savedInstanceState);
-
+            //VideoViewRenderer.Init();
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
