@@ -2,7 +2,7 @@
     $title = 'Media';
     $page = 'Media';
     $url = 'delM/';
-    
+    //dd($success);
     //get from the announcement table everything so we can populate
     //using foreach with pagination at the end of the page
     //['title','type','description','file','image','diet']

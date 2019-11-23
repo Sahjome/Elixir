@@ -26,23 +26,72 @@ namespace Elixer.Views
 
         public async Task NavigateFromMenu(int id)
         {
-            if (!MenuPages.ContainsKey(id))
+            //if (Application.Current.Properties["Status"].ToString() == "Student")
+            if(Application.Current.Properties.ContainsKey("Status"))
             {
-                switch (id)
+                if (!MenuPages.ContainsKey(id))
                 {
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.Giving:
-                        MenuPages.Add(id, new NavigationPage(new Giving()));
-                        break;
-                    case (int)MenuItemType.Announcements:
-                        MenuPages.Add(id, new NavigationPage(new Announcement()));
-                        break;
+                    switch (id)
+                    {
+                        case (int)MenuItemType.About:
+                            MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                            break;
+                        case (int)MenuItemType.Browse:
+                            MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                            break;
+                        case (int)MenuItemType.Giving:
+                            MenuPages.Add(id, new NavigationPage(new Giving()));
+                            break;
+                        case (int)MenuItemType.Announcements:
+                            MenuPages.Add(id, new NavigationPage(new Announcement()));
+                            break;
+                        case (int)MenuItemType.Media:
+                            MenuPages.Add(id, new NavigationPage(new Media()));
+                            break;
+                        case (int)MenuItemType.Groups:
+                            MenuPages.Add(id, new NavigationPage(new Groups()));
+                            break;
+                        case (int)MenuItemType.Counselling:
+                            MenuPages.Add(id, new NavigationPage(new Counselling()));
+                            break;
+                        case (int)MenuItemType.Settings:
+                            MenuPages.Add(id, new NavigationPage(new Settings()));
+                            break;
+                    }
+                }
 
+            }
+            else
+            {
+                if (!MenuPages.ContainsKey(id))
+                {
+                    switch (id)
+                    {
+                        case (int)MenuItemType.About:
+                            MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                            break;
+                        case (int)MenuItemType.Browse:
+                            MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                            break;
+                        case (int)MenuItemType.Giving:
+                            MenuPages.Add(id, new NavigationPage(new Giving()));
+                            break;
+                        case (int)MenuItemType.Announcements:
+                            MenuPages.Add(id, new NavigationPage(new Announcement()));
+                            break;
+                        case (int)MenuItemType.Media:
+                            MenuPages.Add(id, new NavigationPage(new Media()));
+                            break;
+                        //case (int)MenuItemType.Groups:
+                        //    MenuPages.Add(id, new NavigationPage(new Groups()));
+                        //    break;
+                        //case (int)MenuItemType.Counselling:
+                        //    MenuPages.Add(id, new NavigationPage(new Counselling()));
+                        //    break;
+                        case (int)MenuItemType.Settings:
+                            MenuPages.Add(id, new NavigationPage(new Settings()));
+                            break;
+                    }
                 }
             }
 

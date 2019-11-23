@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
 using UIKit;
 
@@ -24,7 +21,8 @@ namespace Elixer.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            //VideoViewRenderer.Init();
+            //CrossMediaManager.Current.Init();
             return base.FinishedLaunching(app, options);
         }
     }

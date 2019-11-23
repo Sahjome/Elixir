@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Elixer.Models;
+using Elixer.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -18,9 +23,11 @@ namespace Elixer.Views
             InitializeComponent();
             form.IsVisible = false;
             formtitle.IsVisible = false;
+            BindingContext = this;
             
         }
-        
+
+        string _sex;
         void Required()
         {
             List<Entry> entries = new List<Entry>
@@ -33,28 +40,21 @@ namespace Elixer.Views
                 if (string.IsNullOrWhiteSpace(dat.Text))
                 {
                     //dat.Placeholder.Insert(-1, "*");
-                    dat.Placeholder += "*";
+                    dat.Placeholder = dat.Placeholder+"*";
                     dat.PlaceholderColor = Color.Red;
                 }
             }
-                
+               
         }
 
-        Dictionary<string, Entry> clope = new Dictionary<string, Entry>();
+        private void Sex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            int sel = picker.SelectedIndex;
+            _sex = (sel == 0) ? "female" : (sel == 1) ? "male" : null;
+            //_sex = sel.ToString();
 
-        //void Tery(Dictionary<string, object> data)
-        //{
-        //    clope.Add(fname.Text, fname);
-        //    clope.Add(sname.Text, sname);
-        //    foreach(Entry dat in clope)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(dat.t))
-        //        {
-        //            entr.PlaceholderColor = Color.Red;
-        //        }
-        //    }
-        //}
-        
+        }
         void Mover()
         {
             fname.Focus();
@@ -116,40 +116,94 @@ namespace Elixer.Views
 
         }
 
-        
+        protected override void OnAppearing()
+        {
+            submit.Clicked += Submit_Clicked;
+        }
+
         public async void Submit_Clicked(object sender, EventArgs e)
         {
-
+            if(string.Equals(uname.Text, "Pastor"))
+                await DisplayAlert("Error", "Username cannot be "+uname.Text, "OK");
             //check entry
             if (string.IsNullOrWhiteSpace(fname.Text) || string.IsNullOrWhiteSpace(sname.Text) || 
                 string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(phone.Text) || 
-                string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(uname.Text))
+                string.IsNullOrWhiteSpace(pass.Text) || string.Equals(uname.Text, "Pastor") || string.IsNullOrWhiteSpace(uname.Text) || string.IsNullOrEmpty(_sex))
             {
                 await DisplayAlert("Error", "Please make sure all required fields are filled properly ", "OK");
                 Required();
-                //Tery(fname);   
             }
             else
             {
                 var coin = Vericheck(pass.Text, conpass.Text);
-                if(coin == true)
+                if(coin)
                 {
                     //member = memtype.SelectedItem.ToString();//for member type
-                    //verify that all the credentials are not in db and insert thru api
-                    await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
-                    await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+                    //verify that all the credentials are not in db and insert thru api 
+                    string status = memtype.SelectedItem.ToString();
+                    string address = (string.IsNullOrEmpty(raddy.Text)) ? (haddy.Text) : raddy.Text;
+                    Dictionary<string, object> prof = new Dictionary<string, object>
+                    {
+                        { "firstname", fname.Text },
+                        { "surname", sname.Text},
+                        { "email", email.Text },
+                        { "phone", phone.Text },
+                        { "username", uname.Text },
+                        { "sex", _sex },
+                        { "dob", dob.Date },
+                        { "status", status },
+                        { "department", dept.Text },
+                        { "grad", grad.Date },
+                        { "othername", oname.Text },
+                        { "address", address }
+                    };
+                    var json = JsonConvert.SerializeObject(prof);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpClient http = new HttpClient();
+                    var res = http.PostAsync("https://localhost:44388/api/profiles", content);
+                    Dictionary<string, object> data = new Dictionary<string, object>
+                    {
+                        {"Success", HttpStatusCode.OK },
+                        {"Failed", HttpStatusCode.BadRequest }
+                    };
+                    if (res.Result == data["Success"])
+                    {
+                        Application.Current.Properties["Firstname"] = fname.Text;
+                        Application.Current.Properties["Surname"] = sname.Text;
+                        Application.Current.Properties["Email"] = email.Text;
+                        Application.Current.Properties["Phone"] = phone.Text;
+                        Application.Current.Properties["Username"] = uname.Text;
+                        Application.Current.Properties["Sex"] = _sex;
+                        Application.Current.Properties["DOB"] = dob.Date;
+                        Application.Current.Properties["Status"] = status;
+                        Application.Current.Properties["Dept"] = dept.Text;
+                        Application.Current.Properties["Grad"] = grad.Date;
+                        Application.Current.Properties["Othername"] = oname.Text;
+                        Application.Current.Properties["Address"] = address;
+                        Application.Current.Properties["Occupation"] = occupation.Text;
+                        Application.Current.Properties["Password"] = pass.Text;
+                        await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
+                        //await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+                        Application.Current.MainPage = new LoginPage();
+
+                    }
+                    else
+                    {
+                        DependencyService.Get<Toast>().Show("Try Again");
+                    }
                 }
                 else
                 {
-                    //comp.IsVisible = true;
+                    await DisplayAlert("Error", "Please confirm your password","OK");
                 }
             }
         }
-        public async void Clickred()
+        public async Task Clickred()
         {
-            await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+            //await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+            Application.Current.MainPage = new LoginPage();
         }
 
-        public ICommand ClickCommand => new Command(async () => Clickred());
+        public ICommand clickCommand => new Command(async () => await Clickred());
     }
 }

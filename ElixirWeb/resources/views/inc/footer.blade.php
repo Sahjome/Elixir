@@ -43,7 +43,7 @@
 			<div class="col-lg-3 col-md-5">
 				<div class="footer-widget">
 					<h4 class="mb-4 text-white letter-spacing text-uppercase">Location</h4>
-					<p>{{"Beside RCCG Kings' court, Religious ground, OAU, Ile-ife, Osun state, Nigeria."}}</p>
+					<p>{{"Rehoboth Building Beside RCCG Kings' court, Religious ground, OAU, Ile-ife, Osun state, Nigeria."}}</p>
 					<span class="text-white">+234 (0) 907–587-3424</span>
 					<span class="text-white">clfoau@gmail.com</span>
 				</div>

@@ -13,6 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elixer", "Elixer\Elixer.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3A5D038-FEFF-4EDE-9939-9DC3A7546A3E}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\.nuget\packages\xam.plugin.media\4.0.1.5\readme.txt = ..\..\..\..\.nuget\packages\xam.plugin.media\4.0.1.5\readme.txt
 		ToDo.txt = ToDo.txt
 	EndProjectSection
 EndProject

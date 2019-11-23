@@ -1,8 +1,7 @@
-
 <nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
 	<div class="container-fluid">
 	  <a class="navbar-brand" href={{'/'}}>
-	  		<h2 class="text-white text-capitalize"></i>Elixir<span class="text-color">Web</span></h2>
+	  		<h2 class="text-white text-capitalize"></i>CLF<span class="text-color">OAU</span></h2>
 	  </a>
 
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsid" aria-controls="navbarsid" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,26 +24,28 @@
 					{{-- <button class="log-btn" type="button" data-toggle="modal" data-target="#logInPopUp">LOG IN</button> --}}
 				</div>
 			
-			@else(!empty(Session::get('userDetails')))
+			@else(!empty)
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="/" id="dropdown03"
 					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">create</a>
 					<ul class="dropdown-menu  text-center" aria-labelledby="dropdown03">
-						<li><a class="dropdown-item" href={{'announcements/create'}}>New Special</a></li>
+						<li><a class="dropdown-item" href={{'/announcements/create'}}>New Special</a></li>
 						<li><a class="dropdown-item" href={{'/media/create'}}>New Media</a></li>
-					</ul>
+						<li><a class="dropdown-item" href={{'/reply'}} data-toggle="modal" 
+							data-target="#myModalUsername">Reply</a></li>
+				</ul>
 				</li>
-
+				<li class="nav-item"><a class="nav-link" href={{'/profiles'}}>profiles</a></li>
 				<div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
 					<li class="nav-item"><a class="nav-link" href={{'/logout'}}>Logout</a></li>
 				</div>
 			@endif
 		   
 		</ul>
-		  
 		{{-- <div class="my-md-0 ml-lg-4 mt-4 mt-lg-0 ml-auto text-lg-right mb-3 mb-lg-0">
 			<li class="nav-item"><a class="nav-link"href={{''}}>Login</a></li>
 		</div> --}}
 	  </div>
 	</div>
+	
 </nav>

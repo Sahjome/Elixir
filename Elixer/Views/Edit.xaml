@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Edit Profile"
+             x:Class="Elixer.Views.Edit">
+    <ContentPage.Content>
+        <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                    
+                <Label x:Name="formtitle" Text="Edit Profile" Margin="0,20,0,0" 
+                        FontSize="Title" HorizontalOptions="CenterAndExpand" Grid.Row="0"/>
+            <Grid Grid.Row="1" x:Name="form" Margin="15,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Spacing="10">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                        <Label Text="Register as:" FontSize="Medium"/>
+                        <Picker x:Name="memtype" SelectedIndexChanged="Mem_SelectedIndexChanged" 
+                                VerticalOptions="Start" Margin="-2,-8,0,0">
+                            <Picker.Items>
+                                <x:String>Alumnus</x:String>
+                                <x:String>Student</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" x:Name="type">
+                        <Label Text="Sex:" FontSize="Medium"/>
+                        <Label x:Name="sex" Text="{Binding Sex}" VerticalOptions="Start" Margin="-2,-8,0,0"/>
+                    </StackLayout>
+                </StackLayout>
+                <Grid Grid.Row="1">
+                    <Entry x:Name="fname" ReturnType="Next" Text="{Binding Firstname}" Grid.Column="0"/>
+
+                    <Entry x:Name="sname" IsReadOnly="True" ReturnType="Next" Text="{Binding Surname}" Grid.Column="1"/>
+
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Entry x:Name="oname" ReturnType="Next" Text="{Binding Othername}" Grid.Column="0"/>
+                    <Entry IsReadOnly="True" x:Name="uname" Text="{Binding Username}" ReturnType="Next" Grid.Column="1"/>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Entry x:Name="email" IsReadOnly="True" ReturnType="Next" Text="{Binding Email}" Grid.Column="0" Keyboard="Email"/>
+                    <Entry x:Name="phone" ReturnType="Next" Text="{Binding Phone}" Grid.Column="1" Keyboard="Numeric"/>
+                </Grid>
+
+                <Grid Grid.Row="4" x:Name="student">
+                    <Editor x:Name="haddy" AutoSize="TextChanges" Text="{Binding Address}" Grid.Column="0"/>
+                    <Entry x:Name="dept" ReturnType="Next" Text="{Binding Department}" Grid.Column="1"/>
+                </Grid>
+                <Grid Grid.Row="4" x:Name="alumnus">
+                    <Editor x:Name="raddy" AutoSize="TextChanges" Text="{Binding Address}" Grid.Column="0"/>
+                    <Entry x:Name="occupation" ReturnType="Next" Text="{Binding Occupation}" Grid.Column="1"/>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <StackLayout Orientation="Vertical" Grid.Column="0">
+                        <Label Text="Bithday:" VerticalOptions="StartAndExpand"/>
+                        <DatePicker x:Name="dob" Date="{Binding DOB}" Grid.Column="0" VerticalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <StackLayout x:Name="gradyr" Orientation="Vertical" Grid.Column="1">
+                        <Label Text="Graduation Year:" VerticalOptions="StartAndExpand"/>
+                        <DatePicker x:Name="grad" Date="{Binding Grad}" VerticalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </Grid>
+                <Button Grid.Row="6" x:Name="submit" Text="Submit" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
+                            HorizontalOptions="Center" HeightRequest="35"/>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

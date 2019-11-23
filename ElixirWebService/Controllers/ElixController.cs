@@ -15,6 +15,8 @@ using MySql.Data.MySqlClient;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ElixirWebService.Controllers
 {
@@ -55,7 +57,7 @@ namespace ElixirWebService.Controllers
                     {
                         var data = ToDict.Table(dt);
                         //List<Dictionary<string,string>> data =new  List<Dictionary<to.Table(dt)>();
-                        response.description = "all of them";
+                        response.description = "success";
                         response.status = HttpStatusCode.OK;
                         response.pairs = data;
                         con.Close();
@@ -105,15 +107,15 @@ namespace ElixirWebService.Controllers
                     " @DOB, @Sex, @Status, @Committee, @Dept, @Surname, @Address, @Email, @Grad, @Phone)";
 
                 cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("Username", dt["uname"]);
-                cmd.Parameters.AddWithValue("Firstname", dt["fname"]);
-                cmd.Parameters.AddWithValue("Othername", dt["oname"]);
-                cmd.Parameters.AddWithValue("Surname", dt["sname"]);
-                cmd.Parameters.AddWithValue("Password", dt["pass"]);
+                cmd.Parameters.AddWithValue("Username", dt["username"]);
+                cmd.Parameters.AddWithValue("Firstname", dt["firstname"]);
+                cmd.Parameters.AddWithValue("Othername", dt["othername"]);
+                cmd.Parameters.AddWithValue("Surname", dt["surname"]);
+                cmd.Parameters.AddWithValue("Password", dt["password"]);
                 cmd.Parameters.AddWithValue("DOB", dt["dob"]);
-                cmd.Parameters.AddWithValue("Address", dt["addy"]);
+                cmd.Parameters.AddWithValue("Address", dt["address"]);
                 cmd.Parameters.AddWithValue("Email", dt["email"]);
-                cmd.Parameters.AddWithValue("Dept", dt["dept"]);
+                cmd.Parameters.AddWithValue("Dept", dt["department"]);
                 cmd.Parameters.AddWithValue("Phone", dt["phone"]);
                 cmd.Parameters.AddWithValue("Sex", dt["sex"]);
                 cmd.Parameters.AddWithValue("Grad", dt["grad"]);
@@ -143,8 +145,8 @@ namespace ElixirWebService.Controllers
                     Dictionary<string, object> key = new Dictionary<string, object>
                     {
 
-                        { "username", dt["uname"] },
-                        {"firstname", dt["fname"] },
+                        { "username", dt["username"] },
+                        {"firstname", dt["firstname"] },
                         {"sex", sex},
                         {"status", status}
                     };
@@ -186,20 +188,20 @@ namespace ElixirWebService.Controllers
                     " where (Email = @Email)";
 
                 cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("Username", dt["uname"]);
-                cmd.Parameters.AddWithValue("Firstname", dt["fname"]);
-                cmd.Parameters.AddWithValue("Othername", dt["oname"]);
-                cmd.Parameters.AddWithValue("Surname", dt["sname"]);
-                cmd.Parameters.AddWithValue("Password", dt["pass"]);
+                cmd.Parameters.AddWithValue("Username", dt["username"]);
+                cmd.Parameters.AddWithValue("Firstname", dt["firstname"]);
+                cmd.Parameters.AddWithValue("Othername", dt["othername"]);
+                cmd.Parameters.AddWithValue("Surname", dt["surname"]);
+                cmd.Parameters.AddWithValue("Password", dt["password"]);
                 cmd.Parameters.AddWithValue("DOB", dt["dob"]);
-                cmd.Parameters.AddWithValue("Address", dt["addy"]);
+                cmd.Parameters.AddWithValue("Address", dt["address"]);
                 cmd.Parameters.AddWithValue("Email", dt["email"]);
-                cmd.Parameters.AddWithValue("Dept", dt["dept"]);
+                cmd.Parameters.AddWithValue("Dept", dt["department"]);
                 cmd.Parameters.AddWithValue("Phone", dt["phone"]);
                 cmd.Parameters.AddWithValue("Sex", dt["sex"]);
                 cmd.Parameters.AddWithValue("Grad", dt["grad"]);
                 cmd.Parameters.AddWithValue("Group", dt["group"]);
-                cmd.Parameters.AddWithValue("Committee", dt["comm"]);
+                cmd.Parameters.AddWithValue("Committee", dt["committee"]);
                 cmd.Parameters.AddWithValue("Status", dt["status"]);
                 con.Open();
                 var cron = cmd.ExecuteNonQuery();
@@ -225,8 +227,8 @@ namespace ElixirWebService.Controllers
                     Dictionary<string, object> key = new Dictionary<string, object>
                     {
 
-                        { "username", dt["uname"] },
-                        {"firstname", dt["fname"] },
+                        { "username", dt["username"] },
+                        {"firstname", dt["firstname"] },
                         {"sex", sex},
                         {"status", status}
                     };
@@ -421,8 +423,8 @@ namespace ElixirWebService.Controllers
             {
                 string query = "select Username, Firstname, Surname, Sex, Email, Address from profiles where (Email=@Entry or Username=@Entry and Password=@Password)";
                 cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("Entry", data["uname"]);
-                cmd.Parameters.AddWithValue("Password", data["pass"]);
+                cmd.Parameters.AddWithValue("Entry", data["username"]);
+                cmd.Parameters.AddWithValue("Password", data["password"]);
                 con.Open();
                 adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);
@@ -459,11 +461,11 @@ namespace ElixirWebService.Controllers
         {
             try
             {
-                string query = "insert into profiles (Life_Group) value (@life) where Username = @uname";
+                string query = "insert into profiles (Life_Group) value (@life) where Username = @username";
                 con.Open();
                 cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("life", data["Group"]);
-                cmd.Parameters.AddWithValue("uname", data["Username"]);
+                cmd.Parameters.AddWithValue("username", data["Username"]);
                 var cron = cmd.ExecuteNonQuery();
                 if (cron > 0)
                 {
@@ -499,11 +501,11 @@ namespace ElixirWebService.Controllers
         {
             try
             {
-                string query = "insert into profiles (Committee) value (@life) where Username = @uname";
+                string query = "insert into profiles (Committee) value (@life) where Username = @username";
                 con.Open();
                 cmd = new MySqlCommand(query, con);
                 cmd.Parameters.AddWithValue("life", data["Group"]);
-                cmd.Parameters.AddWithValue("uname", data["Username"]);
+                cmd.Parameters.AddWithValue("username", data["Username"]);
                 var cron = cmd.ExecuteNonQuery();
                 if (cron > 0)
                 {
@@ -537,17 +539,17 @@ namespace ElixirWebService.Controllers
         [HttpPost]
         public HttpResponseMessage MailSender(Dictionary<string, object> data)
         {
-            string uname = data["username"].ToString();
+            string username = data["username"].ToString();
             string message = data["message"].ToString();
+            string email;
             if (message != "forgot password")
             {
                 try
                 {
+                    //data["email"] = "";
                     //get the pastor's email address
-                    //string query1 = "select email from users";
-                    var email = MailTest().ToString();
-
-                    string query = "insert into Counselling (from, to, pair, message) value (@from, @to, @pair, $message)";
+                    email = MailTest();
+                    string query = "insert into direct_message (`from`, `to`, pair, message) values (@from, @to, @pair, @message)";
                     con.Open();
                     cmd = new MySqlCommand(query, con);
                     cmd.Parameters.AddWithValue("from", data["username"]);
@@ -561,10 +563,10 @@ namespace ElixirWebService.Controllers
                         EnableSsl = true
                     };
                     client.Send("counselling@clfoau.com", email, "Counselling", message);
-                    var cron = cmd.ExecuteNonQuery();
-                    client.SendCompleted += (s, e) => cron = cmd.ExecuteNonQuery();
+                    //var cron = cmd.ExecuteNonQuery();
+                    client.SendCompleted += (s, e) => cmd.ExecuteNonQuery();
 
-                    if (cron > 0)
+                    if (cmd.ExecuteNonQuery() > 0)
                     {
                         response.description = "success";
                         response.status = HttpStatusCode.OK;
@@ -602,11 +604,41 @@ namespace ElixirWebService.Controllers
             {
                 try
                 {
-                    //send emailc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                p99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
-                    response.description = "failed";
-                    response.status = HttpStatusCode.BadRequest;
-                    con.Close();
-                    return Request.CreateResponse(response);
+                    //send emailc
+                    email = data["email"].ToString();
+                    //create new random string
+                    string passwordstring = RandomPassword();
+                    string query = "update profiles set Password = (@password) where Username = (@username)";
+                    cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("password", passwordstring);
+                    cmd.Parameters.AddWithValue("username", data["username"]);
+                    con.Open();
+                    //send the mail here
+                    var client = new SmtpClient("smtp.mailtrap.io", 2525)
+                    {
+                        Credentials = new NetworkCredential("b63388c1b23cdd", "70e4fbec1b3c7a"),
+                        EnableSsl = true
+                    };
+                    client.Send("support@clfoau.com", email, "Reset Password", "You have decided to change your password." +
+                        " Your new password is: " + passwordstring + "\nPlease do ensure to change your password on successful" +
+                        " login.\nIf you didn't effect this change please contact support.");
+                    client.SendCompleted += (s, e) => cmd.ExecuteNonQuery();
+
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        response.description = "success";
+                        response.status = HttpStatusCode.OK;
+                        con.Close();
+                        return Request.CreateResponse(response);
+                    }
+                    else
+                    {
+                        response.description = "failed";
+                        response.status = HttpStatusCode.BadRequest;
+                        // response.pair = key;
+                        con.Close();
+                        return Request.CreateResponse(response);
+                    }
                 }
                 catch (Exception)
                 {
@@ -619,10 +651,40 @@ namespace ElixirWebService.Controllers
             }
         }
 
+        // Generate a random number between two numbers    
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+        // Generate a random string with a given size    
+        public string RandomString(int size, bool lowerCase)
+        {
+            StringBuilder builder = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+            if (lowerCase)
+                return builder.ToString().ToLower();
+            return builder.ToString();
+        }
+        public string RandomPassword()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(RandomString(10, true));
+            builder.Append(RandomNumber(1000, 9999));
+            builder.Append(RandomString(2, false));
+            return builder.ToString();
+        }
+
         //test endpoint
         [Route("api/mailtest")]
         [HttpGet]
-        public HttpResponseMessage MailTest()
+        public string MailTest()
         {
             string query = "select email from users where name = 'Admin'";
             con.Open();
@@ -630,13 +692,13 @@ namespace ElixirWebService.Controllers
             var cron = cmd.ExecuteScalar();
             if (cron != null)
             {
-                //Dictionary<string, object> email = new Dictionary<string, object>{
+                //Dictionary<string,object> email = new Dictionary<string, object>{
                 //    { "email", cron.ToString() } };
                 //response.description = "success";
                 //response.status = HttpStatusCode.OK;
                 //response.pair = email;
                 con.Close();
-                return Request.CreateResponse(cron);
+                return cron.ToString();
             }
             else
             {
@@ -644,7 +706,7 @@ namespace ElixirWebService.Controllers
                 response.status = HttpStatusCode.BadRequest;
                 // response.pair = key;
                 con.Close();
-                return Request.CreateResponse(response);
+                return response.ToString();
             }
         }
     }

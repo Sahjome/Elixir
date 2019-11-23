@@ -11913,11 +11913,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+      "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
       "projectName": "Elixer.MobileAppService",
-      "projectPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+      "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
       "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.MobileAppService\\obj\\",
+      "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

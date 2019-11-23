@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Elixer.Services;
 using Elixer.Views;
+using System.IO;
 
 namespace Elixer
 {
@@ -16,6 +17,18 @@ namespace Elixer
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
 
+        static PictureDatabase database;
+
+        public static PictureDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                    database = new PictureDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Avatar.db3"));
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
@@ -24,7 +37,12 @@ namespace Elixer
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new MainPage();
+
+            /*if (Application.Current.Properties.ContainsKey("Username"))
+                MainPage = new LoginPage();
+            else
+                MainPage = new SignUpPage();*/
+            MainPage = new DetailerView();
         }
 
         protected override void OnStart()

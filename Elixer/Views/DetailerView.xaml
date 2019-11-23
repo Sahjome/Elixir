@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:Elixer.Views"
+             xmlns:vm="clr-namespace:Elixer.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.DetailerView">
+
+    <ContentPage.BindingContext>
+        <vm:GroupsViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--<ScrollView>-->
+            <RelativeLayout>
+                <Image Source="clf_small.png" Opacity="0.1" HeightRequest="100" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                    Property=Height, Factor=0.5}"/>
+                <StackLayout Orientation="Vertical" Spacing="30">
+                    <Label Text="Media" VerticalOptions="Start" Margin="0,20,0,0" HorizontalTextAlignment="Center"/>
+
+                <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding media}"
+                      RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement"
+                          ItemSelected="OnItemSelected">
+                        <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <Grid FlexLayout.Basis="{OnIdiom Phone='40%', Tablet='33%'}">
+                                <view:MediaTemplate/>
+                            </Grid>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </RelativeLayout>
+            
+        <!--</ScrollView>-->
+        <!--<Grid Margin="20">
+            <Label Text="Media" FontSize="Body" HorizontalTextAlignment="Center"/>
+            <ScrollView>
+                <FlexLayout x:Name="listView" Wrap="Wrap" JustifyContent="SpaceAround"/>
+            </ScrollView>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage><!--<FlexLayout Padding="0" BackgroundColor="Transparent" AlignItems="Center" Margin="4,4"
+                                        FlexLayout.Basis="{OnIdiom Phone='50%', Tablet='33%'}" 
+                                        FlexLayout.AlignSelf="Start">
+                                    <ScrollView>
+                                        <view:MediaTemplate/>
+                                    </ScrollView>
+                                </FlexLayout>-->

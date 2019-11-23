@@ -14,8 +14,17 @@ Pages
 			Committee
 		Consultation
 		Settings
-
+		edit profile
+		forgot password
 WebService
+	update profiles
+web
+	another account for the pastor
+	this one is for the direct message page alone
+	pages
+		the direct message
+		reply message
+		result of sending reply
 Pictures
 	facebook
 	google
@@ -31,3 +40,5 @@ HowTos
 	use command to change page
 	using bindingcontext
 	formatted string
+	download automatically when clicked
+	send an email on forgot password

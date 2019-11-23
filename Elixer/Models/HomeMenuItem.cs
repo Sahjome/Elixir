@@ -9,7 +9,11 @@ namespace Elixer.Models
         Browse,
         About,
         Giving,
-        Announcements
+        Announcements,
+        Media,
+        Groups,
+        Counselling,
+        Settings
     }
     public class HomeMenuItem
     {

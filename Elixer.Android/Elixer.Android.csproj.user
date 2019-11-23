@@ -3,5 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>mologo</SelectedDevice>
     <DefaultDevice>mologo</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

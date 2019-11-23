@@ -1,18 +1,105 @@
 <?php
     $title = 'Announcements'; //this should be the type
     $page = 'Enhance your communication'; // this should be the title
+    // dd($error);
+    $username = 'me';
+    $from = $username;
+    $to = 'Pastor';
+    $message[] = '';
 ?>
 
-@extends('layout.inner')
+@extends('layout.app')
+@section('section')
+    <section class="section services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="section-title">
+                        <div class="divider mb-3"></div>
+                        <h5>Chat with {{$to}}</h5>
+                    </div>
+                </div>
+            </div>
 
-    @section('featured image')
-    images/blog/gym-single.jpg
-    @endsection
-    @section('body')
-    Sed nec blandit nibh. Merupakan fakta bahwa seorang pembaca akan terpengaruh oleh isitue tulisan dari sebuah halaman saat ia melihat tata letaknya. Maksud penggunaan Lorem Ipsum adalah karena ia kurang lebih memiliki penyebaran huruf.
-    Pellentesque commodo suscipit gravida. Sed sit amet ex sed mi dignissim elementum in ut quam. Vivamus laoreet non mauris eget mattis. Nam turpis orci, consectetur vel accumsan sed, condimentum at sapien. Nunc ut egestas neque, eu hendrerit lacus. Suspendisse fermentum congue dui nec fringilla. Duis volutpat nunc lectus. Suspendisse potenti. Suspendisse egestas venenatis nunc. Donec at laoreet lacus.
-    </p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam quam elit, mollis at odio gravida, ultrices pulvinar justo. Vivamus eleifend mollis dolor, et ornare turpis vehicula in. Pellentesque auctor ac enim sit amet euismod. Ut eu accumsan nunc. Nam ultrices, orci a volutpat molestie, ipsum magna posuere ex, vel lobortis dolor purus tristique purus.</p>
-    <p>Aliquam lobortis efficitur velit, vel tempor dui iaculis non. Mauris non ullamcorper leo. Nulla consectetur arcu eget condimentum auctor. Aliquam sagittis dictum augue. Duis fringilla nec augue eu laore</p>
+            <div class="row justify-content-center pb-5">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+                        @if (count($message) >= 0)
+                            @foreach ($message as $item)
+                                @if ($item->from == $to)
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="media form-control align-items-center mb-4">
+                                            <p>From: {{$to}}</p>
+                                            <div class="media-body">
+                                                <span class="letter-spacing text-sm">{{$item->message}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6"></div>
+                                @else
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="media form-control align-items-center mb-4">
+                                            <p>{{$from}}</p>        
+                                            <div class="media-body">
+                                                <span class="letter-spacing text-sm">{{$item->message}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6"></div>
+                                @endif
+                            @endforeach
+                        @else
+                                <p><center>No messages between the {{$from}} and {{$to}}</center></p>
+                        @endif
+                    </div>
+                </div>
+                
+            {{-- <div class="row justify-content-center pb-5">
+                @if (count($message) >= 2)
+                    <div class="col-lg-10 text-center">
+                        <p>Well-done</p>
+                    </div>
+                @else
+                    <p><center>Nothing to show here</center></p>                    
+                @endif
+            </div> --}}
 
-    @endsection
+            <div class="row justify-content-center pb-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <form class="form" method="POST" action="/send">
+                            @csrf
+                            <div class="form-row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <input type="hidden" name="from" value={{$from}}>
+                                    <input type="hidden" name="to" value={{$to}}>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group col-lg-10 col-md-10 col-sm-12">
+                                        <label class="control-label float-left" name="to">To: {{$to}}</label>
+                                        <textarea name="message" class="form-control" maxlength="180" placeholder="not more than 180 characters..." rows="3" required></textarea>
+                                    </div>
+                                    <button class="btn btn-main col-lg-2 col-md-2 col-sm-12" style="padding-top: 0px;padding-left: 3px;height: 0px;width: 9%;border-radius:18px;" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>  
+                </div>
+            {{-- <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <form id="contact-form" method="POST" action="">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="hidden" value={{$to}}>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="from-label">To: {{$to}}</label>
+                                <textarea class="form-control" rows="3" maxlength="40"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-main">send</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div> --}}
+        </div>
+    </section>
+@endsection

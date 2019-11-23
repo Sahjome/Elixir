@@ -17,6 +17,7 @@ class AnnouncementController extends Controller
     {
         $ann0 = Announcement::orderBy('updated_at', 'desc')->paginate(6);
         return view('announcement.main')->with('ann0', $ann0);
+        //return view('announcement.main')->with('ann0', $ann0);
     }
 
     /**
@@ -118,9 +119,9 @@ class AnnouncementController extends Controller
             $anno->file = $_POST['file'];
             $save = $anno->update();
             if ($save) {
-                \Session::flash('success','Announcement updated.');
-                return redirect('/announcements');
-                // return redirect('/announcements')->with('success','Announcement updated.');    
+                // Session::flash('success','Announcement updated.');
+                // return redirect('/announcements');
+                return redirect('/announcements')->with('success','Announcement updated.');    
             }
             else {
                 return back()->with('error','Something went wrong.');    
@@ -145,7 +146,7 @@ class AnnouncementController extends Controller
             //dd($anno['id']);
             $del = $anno->delete();
             if ($del) {
-                \Session::flash('success','Announcement deleted.');
+                // Session::flash('success','Announcement deleted.');
                 return redirect('/announcements')->with('success','Announcement deleted.');    
             }
             else {

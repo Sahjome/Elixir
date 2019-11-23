@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             
-        <title>{{config('app_name', 'Elixir|'.$title)}}</title>
+        <title>{{config('app_name', 'CLF|'.$title)}}</title>
         
 
         <!-- bootstrap.min css -->
@@ -32,7 +32,7 @@
         @include('inc.navbar')
         
         <div class="main-wrapper">
-            @include('inc.message')
+    		@include('inc.username')								  
             @include('inc.header')
             @include('inc.login')
             @yield('section')

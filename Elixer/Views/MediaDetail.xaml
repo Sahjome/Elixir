@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.MediaDetail">
+
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Margin="10,0,10,20" Orientation="Vertical" Spacing="20" Grid.Row="0">
+                <Label Text="{Binding media.title}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding media.type}" FontSize="Medium" HorizontalOptions="Start"/>
+                    <Label Text="{Binding media.updated_at}" FontSize="Medium" HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="1" x:Name="textView" Padding="10" IsVisible="False">
+                <Label Text="{Binding media.file}" FontSize="Body"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" x:Name="player" IsVisible="False">
+                <Frame CornerRadius="50" IsClippedToBounds="False">
+                    <!--<forms1:VideoView HeightRequest="202"  HorizontalOptions="FillAndExpand" 
+                                  VerticalOptions="FillAndExpand" Source="YourVideoFile"
+                                  VideoAspect="AspectFill" WidthRequest="202"/>-->
+                </Frame>
+             <!--<Button Text="Play" Clicked="BtnPlayVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>
+                <Button Text="Stop" Clicked="BtnStopVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>-->
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

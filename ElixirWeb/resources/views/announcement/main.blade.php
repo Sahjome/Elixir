@@ -2,6 +2,7 @@
     $title = 'Specials';
     $page = 'Announcements & Events';
     $url = 'delA/';
+    //dd($success);
     //get from the announcement table everything so we can populate
     //using foreach with pagination at the end of the page
 ?>

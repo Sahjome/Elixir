@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
 
-        <title>{{config('app_name','Elixir')}}</title>
+        <title>{{config('app_name','CLF')}}</title>
 
         <!-- bootstrap.min css -->
         <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
@@ -31,8 +31,12 @@
 
     <body>
         @include('inc.navbar')
+        <div class="container">
+            @include('inc.message')
+        </div>
         <div class="main-wrapper">
             @include('section.slider')
+    		@include('inc.username')								  
             @include('inc.login')
             @include('section.intro')
             @include('section.join')

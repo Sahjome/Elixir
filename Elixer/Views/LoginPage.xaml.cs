@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Elixer.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -16,6 +20,7 @@ namespace Elixer.Views
         {
             InitializeComponent();
             Mover();
+            BindingContext = this;
         }
 
         void Required()
@@ -29,7 +34,7 @@ namespace Elixer.Views
                 if (string.IsNullOrWhiteSpace(dat.Text))
                 {
                     //dat.Placeholder.Insert(-1, "*");
-                    dat.Placeholder += "*";
+                    dat.Placeholder = dat.Placeholder+"*";
                     dat.PlaceholderColor = Color.Red;
                 }
             }
@@ -41,28 +46,103 @@ namespace Elixer.Views
             username.Completed += (s, e) => password.Focus();
             password.Completed += (s, e) => Login_Clicked(s, e);
         }
-        public async void Signup_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            await Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
+            loginBtn.Clicked += Login_Clicked;
         }
 
-       
         public async void Login_Clicked(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text))
+            if (string.IsNullOrWhiteSpace(username.Text) || string.IsNullOrWhiteSpace(password.Text))
             {
-                await DisplayAlert("Error", "Please check your input", "OK");
+                DependencyService.Get<Toast>().Show("Please check your input");
                 Required();
             }
-            //verify the credentials of the user from the api
-            await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            else
+            { 
+                string _username = Application.Current.Properties["Username"].ToString();
+                string _email = Application.Current.Properties["Email"].ToString();
+                string _password = Application.Current.Properties["Password"].ToString();
+                if (Application.Current.Properties.ContainsKey("Username") && Application.Current.Properties.ContainsKey("Password"))
+                {
+                    if((username.Text == _username ||username.Text == _email) && password.Text == _password)
+                    {
+                        //await Navigation.PushModalAsync(new NavigationPage(new MainPage()))
+                        App.Current.MainPage = new MainPage();
+                    }
+                    else
+                    {
+                        await DisplayAlert("Response", "Wrong login credentials", "OK");
+                        //DependencyService.Get<Toast>().Show("Try again");
+                    }
+                }
+                else if (Application.Current.Properties.ContainsKey("Username") && !Application.Current.Properties.ContainsKey("Password"))
+                {
+                    //verify the credentials of the user from the api
+                    Dictionary<string, object> data = new Dictionary<string, object>
+                    {
+                        {"username", username.Text },
+                        {"password", password.Text }
+                    };
+                    var json = JsonConvert.SerializeObject(data);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpClient http = new HttpClient();
+                    var res = await http.PostAsync("https://localhost:44388/api/login", content);
+                    
+                    if (res.IsSuccessStatusCode)
+                    {
+                        Application.Current.Properties["Password"] = password.Text;
+                        App.Current.MainPage = new MainPage();
+                    }
+                    else
+                    {
+                        DependencyService.Get<Toast>().Show("Try Again");
+                    }
+                }
+            }
         }
         //LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-        public async void Clickred()
+        public async Task Clickred()
         {
-            await Navigation.PushModalAsync(new NavigationPage(new SignUpPage()));
+           Application.Current.MainPage = new SignUpPage();
+        }
+        public async Task ForgotPassword()
+        {
+            bool reset = await DisplayAlert("Reset Password", "Your current password will be deleted", "OK", "Cancel");
+            if (reset)
+            {
+                if (Application.Current.Properties.ContainsKey("Password"))
+                {
+                    Application.Current.Properties.Remove("Password");
+                    //call the mailing api
+                    Dictionary<string, object> data = new Dictionary<string, object>
+                    {
+                        {"username",  Application.Current.Properties["Email"]},
+                        {"message", "forgot password" }
+                    };
+                    var json = JsonConvert.SerializeObject(data);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    HttpClient http = new HttpClient();
+                    var res = await http.PostAsync("https://localhost:44388/api/mailer", content);
+
+                    if (res.IsSuccessStatusCode)
+                    {
+                        await DisplayAlert("Response", "Check your mail, a new password has been sent.", "OK");
+                    }
+                    else
+                    {
+                        DependencyService.Get<Toast>().Show("Try Again");
+                    }
+                }
+                else
+                {
+                    DependencyService.Get<Toast>().Show("No Password");
+                }
+            }
+            
         }
 
-        public ICommand ClickCommand => new Command(async () => Clickred());
+        public ICommand clickCommand => new Command(async () => await Clickred());
+        public ICommand clickCommand1 => new Command(async () => await ForgotPassword());
     }
 }

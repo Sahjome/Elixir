@@ -74,13 +74,13 @@
                 <div class="card rounded-0 border-0 shadow-sm text-center py-5 px-4 contact-info">
                     <i class="ti-home mb-3 text-lg text-color"></i>
                     <span>Location</span>
-                    <p class="lead text-black mt-3">{{"Beside RCCG Kings' court, Religious ground, OAU, Ile-ife, Osun state, Nigeria."}}</p>
+                    <p class="lead text-black mt-3">{{"Rehoboth Building Beside RCCG Kings' court, Religious ground, OAU, Ile-ife, Osun state, Nigeria."}}</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="contact-form section">
+{{-- <section class="contact-form section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
@@ -117,5 +117,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

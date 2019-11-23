@@ -20,9 +20,9 @@ namespace Elixer.ViewModels
                 " the edifying of the body of Christ”, and our Mission Statement is “To train up believers in " +
                 "Spirit, Word and Practice, so that they may in turn go out and impart their world.”";
             
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            //OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
 
-        public ICommand OpenWebCommand { get; }
+        //public ICommand clickCommand = new Command(() => return  { get; }
     }
 }

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.Settings">
+    
+    
+    <ContentPage.Content>
+
+        <RelativeLayout>
+            <Image Source="clf_small.png" Opacity="0.1" HeightRequest="100" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.5}"/>
+            <Grid Margin="15,50,30,30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Spacing="15" Grid.Row="0">
+                    <StackLayout>
+                        <Label Text="Profile" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Start" HorizontalTextAlignment="Center"/>
+                        <BoxView BackgroundColor="Black" HeightRequest="1" WidthRequest="70" HorizontalOptions="Start"/>
+                    </StackLayout>
+                
+                <Label VerticalOptions="End" HorizontalOptions="StartAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Change Avatar" >
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding clickCommand}" CommandParameter="Change Avatar"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <!--<Span Text="Log in" TextDecorations="Underline" 
+                                              TextColor="CadetBlue" FontSize="Micro" x:Name="loginBtn"/>-->
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    
+                </Label>
+                <Label VerticalOptions="End" HorizontalOptions="StartAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Edit Profile">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding clickCommand1}" CommandParameter="Edit Profile"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <!--<Span Text="Log in" TextDecorations="Underline" 
+                                              TextColor="CadetBlue" FontSize="Micro" x:Name="loginBtn"/>-->
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    
+                </Label>
+                <Label VerticalOptions="End" HorizontalOptions="StartAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Change Password" >
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding clickCommand2}" CommandParameter="Change Password"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <!--<Span Text="Log in" TextDecorations="Underline" 
+                                              TextColor="CadetBlue" FontSize="Micro" x:Name="loginBtn"/>-->
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    
+                </Label>
+            </StackLayout>
+            <StackLayout Spacing="20" Margin="0,15,0,0" VerticalOptions="StartAndExpand" Grid.Row="1">
+                    <StackLayout>
+                        <Label Text="Notifications" FontSize="Medium" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center"/>
+                        <BoxView BackgroundColor="Black" HeightRequest="1" Grid.Row="1" WidthRequest="70" HorizontalOptions="Start"/>
+                    </StackLayout>
+               
+                <StackLayout Orientation="Horizontal" Spacing="15" Padding="5">
+                    <Label Text="Receive notifications?" HorizontalOptions="Start"/>
+                    <Switch x:Name="notifications" IsToggled="True"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        </RelativeLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

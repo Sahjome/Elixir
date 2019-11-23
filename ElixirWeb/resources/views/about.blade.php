@@ -17,7 +17,7 @@
             <div class="col-lg-6 col-md-12">
                 <div class="about-item position-relative mt-5 mt-lg-0">
                     <span class="h5 text-lg text-muted">Est:1985</span>
-                    <h2 class="mt-1 mb-3">CLF <span class="text-color">OAU</span>is 34 years ON...</h2>
+                    <h2 class="mt-1 mb-3">CLF<span class="text-color">OAU</span> is 34 years ON...</h2>
 
                     <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lorem ante, dapibus in.</p>
                 </div>
@@ -40,43 +40,43 @@
             <div class="row ">
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center mb-4 border-0 bg-black-50 rounded-0 ">
-                        <i class="icofont-dumbbells text-lg text-color"></i>
+                        <i class="icofont-love text-lg text-color"></i>
                         <h3 class="mt-3 text-white">Love </h3>
                         <p class="mt-3 mb-4 text-white">Our Motto: Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center border-0 mb-4 rounded-0">
-                        <i class="icofont-ui-fire-wall text-lg text-color"></i>
+                        <i class="icofont-money text-lg text-color"></i>
                         <h3 class="mt-3">Giving</h3>
                         <p class="mt-3 mb-4">Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center border-0 rounded-0 bg-black-50">
-                        <i class="icofont-bill-alt text-lg text-color"></i>
+                        <i class="icofont-tie text-lg text-color"></i>
                         <h3 class="mt-3 text-white">Discipline</h3>
                         <p class="mt-3 mb-4 text-white">Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center border-0 mb-4 rounded-0">
-                        <i class="icofont-muscle text-lg text-color"></i>
+                        <i class="icofont-eye-alt text-lg text-color"></i>
                         <h3 class="mt-3">Our Vision</h3>
                         <p class="mt-3 mb-4"> Found in Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center border-0 rounded-0 bg-black-50">
-                        <i class="icofont-fruits text-lg text-color"></i>
+                        <i class="icofont-bullseye text-lg text-color"></i>
                         <h3 class="mt-3 text-white">Our Mission</h3>
-                        <p class="mt-3 mb-4"> Found in Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
+                        <p class="mt-3 mb-4 text-white"> Found in Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>
                 </div>
     
                 <div class="col-lg-4 col-md-6">
                     <div class="card p-4 text-center border-0 rounded-0 ">
-                        <i class="icofont-thumbs-up text-lg text-color"></i>
+                        <i class="icofont-read-book text-lg text-color"></i>
                         <h3 class="mt-3">Schools</h3>
                         <p class="mt-3 mb-4">Foundation & Discipleship Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
                     </div>

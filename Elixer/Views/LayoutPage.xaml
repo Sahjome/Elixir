@@ -5,11 +5,75 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Elixer.Views.LayoutPage">
+    
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RelativeLayout>
+            <Image Source="clf_small.png" Opacity="0.1" HeightRequest="100" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.5}"/>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0">
+                    <Grid>
+                       
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+
+                            <StackLayout Orientation="Vertical" Margin="20,40,20,40" Spacing="10" Grid.Row="0">
+                                <Image Source="clf_small.png" Opacity="0.7" HeightRequest="100" WidthRequest="50" VerticalOptions="EndAndExpand"
+                                Aspect="AspectFit"/>
+                                <Label Text="WELCOME!" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <Entry Grid.Row="1" ReturnType="Next" Placeholder="Username/Email" x:Name="username"/>
+                        <Entry Grid.Row="2" ReturnType="Done" IsPassword="True" Placeholder="Password" x:Name="password"/>
+                        <Button Grid.Row="3" Text="Login" x:Name="loginBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed"
+                                HorizontalOptions="Center" HeightRequest="35"/>
+                        
+                    </Grid>
+                </ScrollView>
+                <StackLayout Orientation="Horizontal" Grid.Row="1" VerticalOptions="EndAndExpand" Margin="30" HorizontalOptions="Fill">
+                    <Label HorizontalOptions="Start">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Not registered?" FontSize="Micro" />
+                                    <Span Text="   "  />
+                                    <Span Text="Sign Up" TextDecorations="Underline"
+                            TextColor="CadetBlue" FontSize="Micro" x:Name="signupBtn"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding clickCommand}" CommandParameter="Sign Up"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Forgot Password" TextDecorations="Underline"
+                            TextColor="CadetBlue" FontSize="Micro" x:Name="forgot"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding clickCommand1}" CommandParameter="Forgot"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                
+            </Grid>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -6,11 +6,13 @@ namespace Elixer.Models
 {
     public class Announcement
     {
+        public int id { get; set; }
         public string title { get; set; }
         public string type { get; set; }
         public string file { get; set; }
         public string description { get; set; }
-        public DateTime ipdated_at { get; set; }
+        public string details { get; set; }
+        public DateTime updated_at { get; set; }
         
     }
 }

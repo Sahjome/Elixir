@@ -19,43 +19,43 @@
 	<div class="container-fluid p-0">
 		<div class="row no-gutters portfolio-gallery">
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-01.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-01.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_0430.jpg" class="popup-gallery">
+					<img src="images/img/IMG_0430.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-02.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-02.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_1616.jpg" class="popup-gallery">
+					<img src="images/img/IMG_1616.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-03.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-03.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_6256.jpg" class="popup-gallery">
+					<img src="images/img/IMG_6256.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-04.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-04.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_8778.jpg" class="popup-gallery">
+					<img src="images/img/IMG_8778.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-05.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-05.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_9309.jpg" class="popup-gallery">
+					<img src="images/img/IMG_9309.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-06.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-06.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG-20181007-WA0003.jpg" class="popup-gallery">
+					<img src="images/img/IMG-20181007-WA0003.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-07.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-07.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_7874.jpg" class="popup-gallery">
+					<img src="images/img/IMG_7874.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
-				<a href="images/gallery/gallery-08.jpg" class="popup-gallery">
-					<img src="images/gallery/gallery-08.jpg" alt="" class="img-fluid">
+				<a href="images/img/IMG_9496.jpg" class="popup-gallery">
+					<img src="images/img/IMG_9496.jpg" alt="" class="img-fluid">
 				</a>
 			</div>
 		</div>

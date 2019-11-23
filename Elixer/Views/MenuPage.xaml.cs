@@ -17,13 +17,29 @@ namespace Elixer.Views
         public MenuPage()
         {
             InitializeComponent();
-
+            string avatar;
+            string username = Application.Current.Properties["Username"].ToString();
+            if (Application.Current.Properties.ContainsKey("Avatar"))
+            {
+                avatar = Application.Current.Properties["Avatar"].ToString();
+                //string username = "Ayo";
+            }
+            else
+            {
+                avatar = "clf.png";
+            }
+            BindingContext = username;
+            BindingContext = avatar;
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.Giving, Title="Giving" },
-                new HomeMenuItem {Id = MenuItemType.Announcements, Title="Announcements" }
+                new HomeMenuItem {Id = MenuItemType.Announcements, Title="Announcements" },
+                new HomeMenuItem {Id = MenuItemType.Media, Title="Media" },
+                new HomeMenuItem {Id = MenuItemType.Groups, Title="Groups" },
+                new HomeMenuItem {Id = MenuItemType.Counselling, Title="Counselling" },
+                new HomeMenuItem {Id = MenuItemType.Settings, Title="Settings" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

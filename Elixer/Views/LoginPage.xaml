@@ -5,68 +5,75 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Elixer.Views.LoginPage">
-    
-    
+
+
     <ContentPage.Content>
-        <Grid Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <StackLayout Orientation="Vertical" Margin="20,10,20,50" Spacing="10" Grid.Row="0">
-                <Label Text="WELCOME!" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                <Image Source="images.jpeg" HeightRequest="100" WidthRequest="50" VerticalOptions="EndAndExpand"
-                        Aspect="Fill"/>
-                <BoxView HeightRequest="1" Color="Black"/>
-            </StackLayout>
-            
-            <Entry Grid.Row="1" ReturnType="Next" Placeholder="Username/Email" x:Name="username"/>
-            <Entry Grid.Row="2" ReturnType="Done" IsPassword="True" Placeholder="Password" x:Name="password"/>
-            <Button Grid.Row="3" Text="Login" Clicked="Login_Clicked" BackgroundColor="AliceBlue"
-                                FontSize="Micro" Margin="0,20,0,10" x:Name="loginBtn"/>
-            <Grid Grid.Row="4" Margin="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <BoxView BackgroundColor="Black" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
-                <Label Text="OR" Grid.Column="1" HorizontalTextAlignment="Center" VerticalOptions="Center" FontSize="Body" FontAttributes="Bold"/>
-                <BoxView BackgroundColor="Black" VerticalOptions="Center" Grid.Column="2" HorizontalOptions="FillAndExpand"  HeightRequest="1"/>
-            </Grid>
-            <StackLayout Grid.Row="5" Margin="10" Orientation="Horizontal" HorizontalOptions="Center">
-                <ImageButton Source="fb.png" BackgroundColor="AliceBlue" HorizontalOptions="CenterAndExpand"
-                            HeightRequest="4"/>
-                <Label Text="Login with facebook" FontSize="Body"/>
-            </StackLayout>
-            <StackLayout Grid.Row="6" Margin="10" Orientation="Horizontal" HorizontalOptions="Center">
-                <ImageButton Source="google.png" BackgroundColor="AliceBlue" HorizontalOptions="CenterAndExpand"
-                            HeightRequest="4"/>
-                <Label Text="Login with google" FontSize="Body"/>
-            </StackLayout>
-            <Label Grid.Row="7" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Not registered?" FontSize="Micro" />
-                            <Span Text="   "  />
-                            <Span Text="Sign Up" TextDecorations="Underline"
+        <RelativeLayout>
+            <Image Source="clf_small.png" Opacity="0.1" HeightRequest="100" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Width, Factor=0.5, Constant=-50}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                Property=Height, Factor=0.5}"/>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0">
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <StackLayout Orientation="Vertical" Margin="20,40,20,40" Spacing="10" Grid.Row="0">
+                            <Image Source="clf_small.png" Opacity="0.7" HeightRequest="100" WidthRequest="50" VerticalOptions="EndAndExpand"
+                                Aspect="AspectFit"/>
+                            <Label Text="WELCOME!" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <Entry Grid.Row="1" ReturnType="Next" Placeholder="Username/Email" x:Name="username"/>
+                        <Entry Grid.Row="2" ReturnType="Done" IsPassword="True" Placeholder="Password" x:Name="password"/>
+                        <Button Grid.Row="3" Text="Login" Clicked="Login_Clicked" x:Name="loginBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed"
+                                HorizontalOptions="Center" HeightRequest="35"/>
+
+                    </Grid>
+                </ScrollView>
+                <StackLayout Orientation="Horizontal" Grid.Row="1" VerticalOptions="EndAndExpand" Margin="30" HorizontalOptions="Fill">
+                    <Label HorizontalOptions="Start">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Not registered?" FontSize="Micro" />
+                                    <Span Text="   "  />
+                                    <Span Text="Sign Up" TextDecorations="Underline"
                             TextColor="CadetBlue" FontSize="Micro" x:Name="signupBtn"/>
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding clickCommand}" CommandParameter="Sign Up"/>
-                </Label.GestureRecognizers>
-            </Label>
-        </Grid>
-        
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding clickCommand}" CommandParameter="Sign Up"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="Forgot Password" TextDecorations="Underline"
+                            TextColor="CadetBlue" FontSize="Micro" x:Name="forgot"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding clickCommand1}" CommandParameter="Forgot"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+            </Grid>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

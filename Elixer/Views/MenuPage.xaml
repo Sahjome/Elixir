@@ -11,8 +11,16 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <StackLayout >
+                <Frame IsClippedToBounds="True" Padding="0" HorizontalOptions="Center"
+                   WidthRequest="200" HeightRequest="200" CornerRadius="100">
+                    <Image x:Name="avatar" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFill" />
+                </Frame>
+                <Label Text="{Binding username}" FontSize="Medium"/>
+            </StackLayout>
             
             <ListView Grid.Row="1" x:Name="ListViewMenu"
                     HasUnevenRows="True">

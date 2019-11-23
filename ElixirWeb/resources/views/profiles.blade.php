@@ -13,8 +13,8 @@ $i=1;
 <section class="section about">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <table class="table mt-5 table-hover">
+            <div class="col-lg-12 col-sm-12 table-responsive">
+                <table class="table mt-5 table-hover" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>s/n</th>
@@ -26,6 +26,7 @@ $i=1;
                             <th>Phone</th>
                             <th>Address</th>
                             <th>Birthday</th>
+                            <th>Life Group</th>
                             <th>Committee</th>
                             <th>Department</th>
                             <th>Graduated</th>
@@ -46,6 +47,7 @@ $i=1;
                                     <td>{{$item['Phone']}}</td>
                                     <td>{{$item['Address']}}</td>
                                     <td>{{$item['DOB']}}</td>
+                                    <td>{{$item['Life_Group']}}</td>
                                     <td>{{$item['Committee']}}</td>
                                     <td>{{$item['Dept']}}</td>
                                     <td>{{$item['Grad']}}</td>
@@ -70,6 +72,7 @@ $i=1;
                             <th>Phone</th>
                             <th>Address</th>
                             <th>Birthday</th>
+                            <th>Life Group</th>
                             <th>Committee</th>
                             <th>Department</th>
                             <th>Graduated</th>
@@ -78,10 +81,9 @@ $i=1;
                     </tfoot>
                     
                 </table>
-            </div>
         
 
-        </div>
+       
         <div class="row justify-content-center mt-5">
             <nav aria-label="Page navigation ">
                 <ul class="pagination justify-content-center">
@@ -89,6 +91,9 @@ $i=1;
                 </ul>
             </nav>
         </div>
+    </div>
+
+    </div>
     </div>
      
 </section>

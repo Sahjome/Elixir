@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Elixer.Views.CardViewTemplate">
   <ContentView.Content>
-      <Frame Margin="5" IsClippedToBounds="True" Padding="10" BackgroundColor="Gray" BorderColor="OrangeRed">
+      <Frame Margin="5" IsClippedToBounds="True" Padding="10" BackgroundColor="Transparent" BorderColor="OrangeRed">
             <StackLayout Orientation="Horizontal">
                 <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
                       Padding="0" BackgroundColor="Transparent">
@@ -18,12 +18,12 @@
                     </Grid.RowDefinitions>
                     <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                         <Image Source="{Binding file}" VerticalOptions="Start" WidthRequest="30" HeightRequest="30"/>
-                        <Label Text="{Binding Title, Mode=TwoWay}" Grid.Row="0" HorizontalTextAlignment="Start"
+                        <Label Text="{Binding updated_at, Mode=TwoWay}" Grid.Row="0" HorizontalTextAlignment="Start"
                                VerticalTextAlignment="Center" TextColor="Black"/>
                     </StackLayout>
                     <Grid Grid.Row="1">
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Type, Mode=TwoWay}" Grid.Row="1" HorizontalTextAlignment="Start"
+                            <Label Text="{Binding type, Mode=TwoWay}" Grid.Row="1" HorizontalTextAlignment="Start"
                                    VerticalTextAlignment="Start" TextColor="Black"/>
                             <Image Source="{Binding file, Mode=OneWay}" VerticalOptions="Start" WidthRequest="40"
                                    Grid.Row="2" HeightRequest="40" HorizontalOptions="End"/>
@@ -34,7 +34,7 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <d:Label Grid.Row="0" Grid.Column="0"/>
-                        <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"
+                        <Label Text="{Binding description}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"
                                VerticalOptions="Start"/>
                     </Grid>
                 </Grid>

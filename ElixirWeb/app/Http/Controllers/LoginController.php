@@ -13,11 +13,16 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
+        if (!empty(Session::get('chatDetails'))) {
+            Session::flush();
+            session_destroy();
+        }
         $credentials = ['email'=> $request->entry,
          'password' => $request->password];
         $login = DB::select("select * from users where email = ? and password = ? ", [$request->entry,$request->password]);
         if(!empty($login)){
-            Session::put('userDetails',$credentials);
+            //dd($login[0]->name);
+            Session::put('userDetails',$login);
             return redirect('/')->with('success','Welcome.');
             Session::start();
         }
@@ -33,7 +38,6 @@ class LoginController extends Controller
     }
     public function users($pass, $entry)
     {
-        //$var = 1;
         $credentials = ['email'=> $entry,
          'password' => $pass];
         //$login = User::find('email','from','name','=',$entry,'and','password','=',$pass);
@@ -44,7 +48,5 @@ class LoginController extends Controller
             Session::start();
         }
         return back()->with('error','Login Failed.');
-        //$see = User::find($var);
-        //dd($login);
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.iOS\\Elixer.iOS.csproj": {}
+    "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.iOS\\Elixer.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.iOS\\Elixer.iOS.csproj": {
+    "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.iOS\\Elixer.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.iOS\\Elixer.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.iOS\\Elixer.iOS.csproj",
         "projectName": "Elixer.iOS",
-        "projectPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.iOS\\Elixer.iOS.csproj",
+        "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.iOS\\Elixer.iOS.csproj",
         "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer.iOS\\obj\\",
+        "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -33,8 +33,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\Elixer.csproj": {
-                "projectPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\Elixer.csproj"
+              "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj": {
+                "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj"
               }
             }
           }
@@ -50,6 +50,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "Octane.Xam.VideoPlayer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -78,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\Elixer.csproj": {
+    "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\Elixer.csproj",
+        "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
         "projectName": "Elixer",
-        "projectPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\Elixer.csproj",
+        "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
         "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahjome\\source\\repos\\Elixer\\Elixer\\obj\\",
+        "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -118,6 +126,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -128,17 +140,29 @@
               "target": "Package",
               "version": "[12.0.2, )"
             },
+            "Octane.Xam.VideoPlayer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.2.0.815419, )"
+              "version": "[4.2.0.848062, )"
+            },
+            "itext7": {
+              "target": "Package",
+              "version": "[7.1.8, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.5.231, )"
+              "version": "[1.6.292, )"
             }
           },
           "imports": [
