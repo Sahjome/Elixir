@@ -3,7 +3,12 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+<<<<<<< HEAD
 using Plugin.CurrentActivity;
+=======
+using MediaManager.Forms.Platforms.Android;
+using MediaManager;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
 namespace Elixer.Droid
 {
@@ -14,11 +19,18 @@ namespace Elixer.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+<<<<<<< HEAD
             //CrossMediaManager.Current.Init(this);
             base.OnCreate(savedInstanceState);
             //VideoViewRenderer.Init();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
+=======
+            CrossMediaManager.Current.Init(this);
+            base.OnCreate(savedInstanceState);
+            //VideoViewRenderer.Init();
+            
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

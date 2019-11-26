@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:view="clr-namespace:Elixer.Views"
+<<<<<<< HEAD
              xmlns:vm="clr-namespace:Elixer.ViewModels"
              mc:Ignorable="d"
              x:Class="Elixer.Views.Media">
@@ -17,6 +18,19 @@
             <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding media}"
                       RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" ItemSelected="OnItemSelected"
+=======
+             mc:Ignorable="d"
+             x:Class="Elixer.Views.Media">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Announcements And Events" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent"/>
+            <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding media}"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                       >
                 <ListView.ItemTemplate>
                     <DataTemplate>

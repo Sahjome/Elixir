@@ -40,5 +40,9 @@ HowTos
 	use command to change page
 	using bindingcontext
 	formatted string
+<<<<<<< HEAD
 	download automatically when clicked
 	send an email on forgot password
+=======
+	download automatically when clicked
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b

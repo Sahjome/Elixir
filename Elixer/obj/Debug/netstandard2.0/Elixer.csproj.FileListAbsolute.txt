@@ -52,6 +52,7 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\MediaTemplate.xaml.g.cs
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\Committee.xaml.g.cs
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\LifeGroup.xaml.g.cs
+<<<<<<< HEAD
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\Edit.xaml.g.cs
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\Password.xaml.g.cs
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Views\AlumnusMenuPage.xaml.g.cs
@@ -60,3 +61,5 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\bin\Debug\netstandard2.0\System.Drawing.Common.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\Elixer.csproj.CopyComplete
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\XamlC.stamp
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b

@@ -13,7 +13,11 @@ namespace Elixer.ViewModels
    
     public class MediaViewModel : MyBaseViewModel
     {
+<<<<<<< HEAD
         public List<Media> media { get; set; }
+=======
+        public List<Media> media;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         public Command LoadItemsCommand { get; set; }
 
         public MediaViewModel()
@@ -34,29 +38,47 @@ namespace Elixer.ViewModels
                 //return all;
                 if (all == null)
                 {
+<<<<<<< HEAD
                    var medias = new List<Media>
                     {
                         new Media{id=1, description="no announcements", title="Announcements11", updated_at=DateTime.Now.Date, image="clf.png"}
                     };
                     foreach (var med in medias)
                         media.Add(med);
+=======
+                    media = new List<Media>
+                    {
+                        new Media{id=1, description="no announcements", title="Announcements", updated_at=DateTime.Now.Date, image="clf.png"}
+                    };
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                     return media;
                 }
                 else
                 {
+<<<<<<< HEAD
                     foreach (var med in all)
                         media.Add(med);
+=======
+                    all = media;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 }
                 return media;
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 var medias = new List<Media>
                 {
                     new Media{id=1, description="Error: "+ex.Message, title="Announcements2", updated_at=DateTime.Now.Date, image="clf.png"}
                 };
                 foreach (var med in medias)
                     media.Add(med);
+=======
+                media = new List<Media>
+                {
+                    new Media{id=1, description="Error: "+ex.Message, title="Announcements", updated_at=DateTime.Now.Date, image="clf.png"}
+                };
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 return media;
             }
        }

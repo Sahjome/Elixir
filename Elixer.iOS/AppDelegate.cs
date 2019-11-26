@@ -1,5 +1,7 @@
 ﻿
 using Foundation;
+using MediaManager;
+using MediaManager.Forms.Platforms.iOS;
 using UIKit;
 
 namespace Elixer.iOS
@@ -22,7 +24,11 @@ namespace Elixer.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             //VideoViewRenderer.Init();
+<<<<<<< HEAD
             //CrossMediaManager.Current.Init();
+=======
+            CrossMediaManager.Current.Init();
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
             return base.FinishedLaunching(app, options);
         }
     }

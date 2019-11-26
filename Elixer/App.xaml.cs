@@ -37,12 +37,16 @@ namespace Elixer
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
+<<<<<<< HEAD
 
             /*if (Application.Current.Properties.ContainsKey("Username"))
                 MainPage = new LoginPage();
             else
                 MainPage = new SignUpPage();*/
             MainPage = new DetailerView();
+=======
+            MainPage = new Announcement();
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         }
 
         protected override void OnStart()

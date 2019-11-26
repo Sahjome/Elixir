@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 # aapt2 is not (yet) keeping FQCNs defined in the appComponentFactory <application> attribute
 -keep class android.support.v4.app.CoreComponentFactory
+=======
+-keep class * extends android.arch.lifecycle.ViewModel {
+    <init>();
+}
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b

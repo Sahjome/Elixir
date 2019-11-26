@@ -3,6 +3,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Elixer.Android.dll" comes first in this list. */
 		"Elixer.Android.dll",
+<<<<<<< HEAD
 		"BouncyCastle.Crypto.dll",
 		"Common.Logging.Core.dll",
 		"Common.Logging.dll",
@@ -26,14 +27,31 @@ public class MonoPackageManager_Resources {
 		"Plugin.CurrentActivity.dll",
 		"Plugin.Media.dll",
 		"Plugin.Permissions.dll",
+=======
+		"Elixer.dll",
+		"ExoPlayer.Core.dll",
+		"ExoPlayer.Dash.dll",
+		"ExoPlayer.dll",
+		"ExoPlayer.Ext.MediaSession.dll",
+		"ExoPlayer.Hls.dll",
+		"ExoPlayer.SmoothStreaming.dll",
+		"ExoPlayer.UI.dll",
+		"FormsViewGroup.dll",
+		"MediaManager.dll",
+		"MediaManager.Forms.dll",
+		"Newtonsoft.Json.dll",
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",
 		"SQLitePCLRaw.lib.e_sqlite3.dll",
 		"SQLitePCLRaw.provider.e_sqlite3.dll",
+<<<<<<< HEAD
 		"System.IO.Packaging.dll",
 		"System.Runtime.Loader.dll",
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

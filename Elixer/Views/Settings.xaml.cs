@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Elixer.Services;
 using Plugin.Media;
 using System;
@@ -8,6 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +28,7 @@ namespace Elixer.Views
         public Settings()
         {
             InitializeComponent();
+<<<<<<< HEAD
             Notifications();
             BindingContext = this;
         }
@@ -56,6 +66,8 @@ namespace Elixer.Views
         void Notifications()
         {
             Application.Current.Properties["Notification"] = (notifications.IsToggled == false) ? "false" : "true";
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         }
     }
 }

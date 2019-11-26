@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Elixer.Models;
 using System;
 using System.Collections.Generic;
@@ -77,5 +78,15 @@ namespace Elixer.ViewModels
                 IsBusy = false;
             }
         }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Elixer.ViewModels
+{
+    class GroupsViewModel
+    {
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     }
 }

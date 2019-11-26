@@ -1,5 +1,12 @@
 ﻿using Elixer.ViewModels;
 using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,8 +24,11 @@ namespace Elixer.Views
             GetType(media.type);
             BindingContext = this.BindingContext = viewModel;
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         private void GetType(string type)
         {
             if (type == "Text")
@@ -52,7 +62,10 @@ namespace Elixer.Views
                 viewModel.GetTextFromText(media.file);
             }
         }
+<<<<<<< HEAD
 
        
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     }
 }

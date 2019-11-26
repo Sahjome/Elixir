@@ -15,7 +15,11 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="android.support.v7.cardview" >
+=======
+    package="android.support.slidingpanelayout" >
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
     <uses-sdk android:minSdkVersion="14" />
 

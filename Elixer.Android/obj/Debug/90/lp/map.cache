@@ -1,8 +1,21 @@
+<<<<<<< HEAD
 FormsViewGroup
 Octane.Xamarin.Forms.VideoPlayer.Android
 Plugin.CurrentActivity
 Plugin.Media
 Plugin.Permissions
+=======
+ExoPlayer.Core
+ExoPlayer.Dash
+ExoPlayer
+ExoPlayer.Ext.MediaSession
+ExoPlayer.Hls
+ExoPlayer.SmoothStreaming
+ExoPlayer.UI
+FormsViewGroup
+MediaManager
+MediaManager.Forms
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core

@@ -21,12 +21,19 @@ namespace Elixer.Views
         {
             InitializeComponent();
             BindingContext = join;
+<<<<<<< HEAD
             string name = surname + ", " + firstname + " " + "othername";
             BindingContext = name;
         }
         string grp;
 
         void Group_SelectedIndexChanged(object sender, EventArgs e)
+=======
+        }
+        string grp;
+
+        void Mem_SelectedIndexChanged(object sender, EventArgs e)
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         {
             var picker = (Picker)sender;
             int sel = picker.SelectedIndex;
@@ -39,9 +46,13 @@ namespace Elixer.Views
             "Service to God and His Church is a vital part of our culture in CLF, and provides an opportunity for us to develop " +
             "our talents, discover hidden giftings and advance the Body of Christ.\r\nFill the Sign-Up Form to find out where " +
             "you can serve in Church with the skills you have.";
+<<<<<<< HEAD
         string firstname = Application.Current.Properties["Firstname"].ToString();
         string surname = Application.Current.Properties["Surname"].ToString();
         string othername = Application.Current.Properties["Othername"].ToString();
+=======
+
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         protected override void OnAppearing()
         {
             submitBtn.Clicked += Submit_Clicked;
@@ -60,9 +71,13 @@ namespace Elixer.Views
                     GroupClass clas = new GroupClass
                     {
                         Group = grp,
+<<<<<<< HEAD
                         Firstname = Details.Username = firstname,
                         Surname = Details.Surname = surname,
                         Othername = Details.Othername = othername
+=======
+                        Username = Details.Username
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                     };
                     var json = JsonConvert.SerializeObject(clas);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -75,7 +90,10 @@ namespace Elixer.Views
                     };
                     if (res.Result == data["Success"])
                     {
+<<<<<<< HEAD
                         Application.Current.Properties["Committee"] = grp;
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                         await DisplayAlert("Success", "Application sent.", "OK");
                     }
                     else

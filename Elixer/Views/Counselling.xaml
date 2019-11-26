@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+<<<<<<< HEAD
              Title="Counselling"
              x:Class="Elixer.Views.Counselling">
     <ContentPage.Content>
@@ -26,5 +27,14 @@
             <Button Grid.Row="3" Text="Submit" x:Name="submitBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
                                 HorizontalOptions="Center" HeightRequest="35"/>
         </Grid>
+=======
+             x:Class="Elixer.Views.Counselling">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     </ContentPage.Content>
 </ContentPage>

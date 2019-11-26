@@ -47,6 +47,30 @@
           "lib/netstandard1.3/DocumentFormat.OpenXml.dll": {}
         }
       },
+<<<<<<< HEAD
+=======
+      "GemBox.Document/31.0.0.1035": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GemBox.Document.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GemBox.Document.dll": {}
+        }
+      },
+      "GemBox.Pdf/13.0.0.1052": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GemBox.Pdf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GemBox.Pdf.dll": {}
+        }
+      },
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
       "itext7/7.1.8": {
         "type": "package",
         "dependencies": {
@@ -229,6 +253,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+<<<<<<< HEAD
       "Octane.Xam.VideoPlayer/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -248,6 +273,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Plugin.Permissions.dll": {}
+=======
+      "Plugin.MediaManager/0.8.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediaManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediaManager.dll": {}
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         }
       },
       "Portable.BouncyCastle/1.8.1.3": {
@@ -610,6 +644,18 @@
           "ref/netstandard1.5/_._": {}
         }
       },
+<<<<<<< HEAD
+=======
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      },
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
       "System.Dynamic.Runtime/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1641,6 +1687,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+<<<<<<< HEAD
       "Xam.Plugin.Media/4.0.1.5": {
         "type": "package",
         "dependencies": {
@@ -1653,6 +1700,8 @@
           "lib/netstandard2.0/Plugin.Media.dll": {}
         }
       },
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -1744,6 +1793,45 @@
         "lib/netstandard1.3/DocumentFormat.OpenXml.xml"
       ]
     },
+<<<<<<< HEAD
+=======
+    "GemBox.Document/31.0.0.1035": {
+      "sha512": "iAvjuhWRe9dNxvF24SN9fYl/IcUe/EWh1s/Ey/5V3zlI1JwzRyUZGIeTOygKofv3klWqfXjBpRigmkjdZ9zHNg==",
+      "type": "package",
+      "path": "gembox.document/31.0.0.1035",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "gembox.document.31.0.0.1035.nupkg.sha512",
+        "gembox.document.nuspec",
+        "lib/net35/GemBox.Document.dll",
+        "lib/net35/GemBox.Document.xml",
+        "lib/netstandard2.0/GemBox.Document.dll",
+        "lib/netstandard2.0/GemBox.Document.xml",
+        "licenses/EULA.txt",
+        "licenses/ThirdPartyCodeLicenses.txt"
+      ]
+    },
+    "GemBox.Pdf/13.0.0.1052": {
+      "sha512": "Ol/GxFF0xERtbCKlIrBCtPExD+clpYq8gR/QL9LomDmjakdY/6S5ohZWEddKshCXM6gXrqVN7MmGWl2qgTZqfw==",
+      "type": "package",
+      "path": "gembox.pdf/13.0.0.1052",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "gembox.pdf.13.0.0.1052.nupkg.sha512",
+        "gembox.pdf.nuspec",
+        "lib/net35/GemBox.Pdf.dll",
+        "lib/net35/GemBox.Pdf.xml",
+        "lib/netstandard2.0/GemBox.Pdf.dll",
+        "lib/netstandard2.0/GemBox.Pdf.xml",
+        "licenses/EULA.txt",
+        "licenses/ThirdPartyCodeLicenses.txt"
+      ]
+    },
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     "itext7/7.1.8": {
       "sha512": "B5uuZSZDmGzNZd/tB8mSW+iJDaSWSC3N2KqghSzmP5EzkJwRQvfRcyqvxGq5qcE7v4nX/EKB4b97QL5jPTVRsA==",
       "type": "package",
@@ -2131,6 +2219,7 @@
         "newtonsoft.json.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Octane.Xam.VideoPlayer/3.1.0": {
       "sha512": "JFjIeDBrmv1cX8B/N7vuaz2DM75hxufRbfPQVoVNkjp+j/9964lwcIyY6tfZwS3OW2INoPih6snjXG+PdlM6aw==",
       "type": "package",
@@ -2176,6 +2265,45 @@
         "lib/xamarinios10/Plugin.Permissions.xml",
         "plugin.permissions.3.0.0.12.nupkg.sha512",
         "plugin.permissions.nuspec",
+=======
+    "Plugin.MediaManager/0.8.11": {
+      "sha512": "X0Zi49UIu93EePMVCVKDtU955mX7LFed1N+kmn/BnMsO98G48UCnqz2UzOzcV4Qdp85hfAzA1PPlWmIbLgaUzQ==",
+      "type": "package",
+      "path": "plugin.mediamanager/0.8.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/monoandroid90/MediaManager.dll",
+        "lib/monoandroid90/MediaManager.pdb",
+        "lib/monoandroid90/MediaManager.xml",
+        "lib/net472/MediaManager.dll",
+        "lib/net472/MediaManager.pdb",
+        "lib/net472/MediaManager.xml",
+        "lib/netstandard2.0/MediaManager.dll",
+        "lib/netstandard2.0/MediaManager.pdb",
+        "lib/netstandard2.0/MediaManager.xml",
+        "lib/tizen40/MediaManager.dll",
+        "lib/tizen40/MediaManager.pdb",
+        "lib/tizen40/MediaManager.xml",
+        "lib/uap10.0.16299/MediaManager.dll",
+        "lib/uap10.0.16299/MediaManager.pdb",
+        "lib/uap10.0.16299/MediaManager.pri",
+        "lib/uap10.0.16299/MediaManager.xml",
+        "lib/uap10.0.16299/MediaManager/MediaManager.xr.xml",
+        "lib/uap10.0.16299/MediaManager/Platforms/Uap/Video/VideoView.xaml",
+        "lib/xamarinios10/MediaManager.dll",
+        "lib/xamarinios10/MediaManager.pdb",
+        "lib/xamarinios10/MediaManager.xml",
+        "lib/xamarinmac20/MediaManager.dll",
+        "lib/xamarinmac20/MediaManager.pdb",
+        "lib/xamarinmac20/MediaManager.xml",
+        "lib/xamarintvos10/MediaManager.dll",
+        "lib/xamarintvos10/MediaManager.pdb",
+        "lib/xamarintvos10/MediaManager.xml",
+        "plugin.mediamanager.0.8.11.nupkg.sha512",
+        "plugin.mediamanager.nuspec",
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         "readme.txt"
       ]
     },
@@ -3000,6 +3128,42 @@
         "system.diagnostics.tracing.nuspec"
       ]
     },
+<<<<<<< HEAD
+=======
+    "System.Drawing.Common/4.5.1": {
+      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.1.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     "System.Dynamic.Runtime/4.0.11": {
       "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
       "type": "package",
@@ -5954,6 +6118,7 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll",
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
+<<<<<<< HEAD
       ]
     },
     "Xam.Plugin.Media/4.0.1.5": {
@@ -5979,6 +6144,8 @@
         "readme.txt",
         "xam.plugin.media.4.0.1.5.nupkg.sha512",
         "xam.plugin.media.nuspec"
+=======
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
       ]
     },
     "Xamarin.Essentials/1.3.1": {
@@ -6283,10 +6450,18 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "DocumentFormat.OpenXml >= 2.9.1",
+<<<<<<< HEAD
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
       "Octane.Xam.VideoPlayer >= 3.1.0",
       "Xam.Plugin.Media >= 4.0.1.5",
+=======
+      "GemBox.Document >= 31.0.0.1035",
+      "GemBox.Pdf >= 13.0.0.1052",
+      "NETStandard.Library >= 2.0.3",
+      "Newtonsoft.Json >= 12.0.2",
+      "Plugin.MediaManager >= 0.8.11",
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.2.0.848062",
       "itext7 >= 7.1.8",
@@ -6342,6 +6517,17 @@
             "target": "Package",
             "version": "[2.9.1, )"
           },
+<<<<<<< HEAD
+=======
+          "GemBox.Document": {
+            "target": "Package",
+            "version": "[31.0.0.1035, )"
+          },
+          "GemBox.Pdf": {
+            "target": "Package",
+            "version": "[13.0.0.1052, )"
+          },
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -6352,6 +6538,7 @@
             "target": "Package",
             "version": "[12.0.2, )"
           },
+<<<<<<< HEAD
           "Octane.Xam.VideoPlayer": {
             "target": "Package",
             "version": "[3.1.0, )"
@@ -6359,6 +6546,11 @@
           "Xam.Plugin.Media": {
             "target": "Package",
             "version": "[4.0.1.5, )"
+=======
+          "Plugin.MediaManager": {
+            "target": "Package",
+            "version": "[0.8.11, )"
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
           },
           "Xamarin.Essentials": {
             "target": "Package",

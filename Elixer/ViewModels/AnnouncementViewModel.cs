@@ -17,7 +17,11 @@ namespace Elixer.ViewModels
     {
         //  get all the rows in dictionary
         //Announcement ann = new Announcement();
+<<<<<<< HEAD
         public List<Announcement> ann { get; set; }
+=======
+        public List<Announcement> ann;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
        
         public Command LoadItemsCommand { get; set; }
         public AnnouncementViewModel()
@@ -45,29 +49,47 @@ namespace Elixer.ViewModels
                 //return all;
                 if(all == null)
                 {
+<<<<<<< HEAD
                     var mann = new List<Announcement>
                     {
                        new Announcement{id=1, description="no announcements", title="Announcements", updated_at=DateTime.Now, file="clf.png"}
                     };
                     foreach (var dat in mann)
                         ann.Add(dat);
+=======
+                    ann = new List<Announcement>
+                    {
+                       new Announcement{id=1, description="no announcements", title="Announcements", updated_at=DateTime.Now.Date, file="clf.png"}
+                    };
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                     return ann;              
                 }
                 else
                 {
+<<<<<<< HEAD
                     foreach (var dat in all)
                         ann.Add(dat);
+=======
+                    all = ann;
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 }
                 return ann;
             }
             catch(Exception ex)
             {
+<<<<<<< HEAD
                 var mann = new List<Announcement>
                 {
                     new Announcement{id=1, description="Error: "+ex.Message, title="Announcements", updated_at=DateTime.Now, file="clf.png"}
                 };
                 foreach (var dat in mann)
                     ann.Add(dat);
+=======
+                ann = new List<Announcement>
+                {
+                    new Announcement{id=1, description="Error: "+ex.Message, title="Announcements", updated_at=DateTime.Now.Date, file="clf.png"}
+                };
+>>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 return ann;
             }
         }
