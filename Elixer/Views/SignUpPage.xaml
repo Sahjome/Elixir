@@ -66,7 +66,7 @@
                                     </Picker.Items>
                                 </Picker>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" x:Name="type">
+                            <StackLayout Orientation="Horizontal">
                                 <Label Text="Register as:" FontSize="Medium"/>
                                 <Picker x:Name="sex" SelectedIndexChanged="Sex_SelectedIndexChanged" 
                                     VerticalOptions="Start" Margin="-2,-8,0,0">
