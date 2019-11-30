@@ -48,7 +48,7 @@ namespace Elixer.Views
                 var avatar = (object)ImageSource.FromStream(() => stream);
                 avatar = Application.Current.Properties["Avatar"];
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 DependencyService.Get<Toast>().Show("Error, try again");
             }

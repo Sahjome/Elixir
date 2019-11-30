@@ -35,7 +35,7 @@ namespace Elixer.ViewModels
                 return text;
                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 text = "Error reading file";
                 return text;
