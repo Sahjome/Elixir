@@ -31,8 +31,9 @@ namespace Elixer.Views
             var picker = (Picker)sender;
             int sel = picker.SelectedIndex;
 
-            grp = (sel == 0) ? "Church Office" : (sel == 1) ? "ForeRunner" : (sel == 2) ? "Sprcial Duties" : (sel == 3) ? 
-                "Word House" : (sel == 4) ? "Watch Tower" : (sel == 5) ? "Firm Foundation" : (sel == 6) ? "Power and Sound" : null;
+            grp = (sel == 0) ? "Church Office" : (sel == 1) ? "ForeRunner" : (sel == 2) ? "Welfare" : (sel == 3) ? 
+                "Word House" : (sel == 4) ? "Watch Tower" : (sel == 5) ? "Firm Foundation" : (sel == 6) ? "Power and Sound" : (sel == 7) ?
+                "Outreaches" : (sel == 8) ? "The Solid Rock" : null;
         }
 
         string join = "We believe that God gives everyone gifts and talents, and we should use them to serve one another in love. " +

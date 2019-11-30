@@ -4,7 +4,6 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:view="clr-namespace:Elixer.Views"
-<<<<<<< HEAD
              xmlns:vm="clr-namespace:Elixer.ViewModels"
              mc:Ignorable="d"
              x:Class="Elixer.Views.Announcement">
@@ -12,12 +11,7 @@
     <ContentPage.BindingContext>
         <vm:GroupsViewModel/>
     </ContentPage.BindingContext>
-=======
-             mc:Ignorable="d"
-             x:Class="Elixer.Views.Announcement">
 
-    
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     <ContentPage.Content>
         <RelativeLayout>
             <Image Source="clf_small.png" Opacity="0.1" HeightRequest="100" WidthRequest="100" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
@@ -26,18 +20,9 @@
             <StackLayout Orientation="Vertical">
                 <Label Text="Announcements And Events" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent"/>
-<<<<<<< HEAD
                 <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding ann}"
                       RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" ItemSelected="OnItemSelected"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement"
-=======
-            <ListView x:Name="listView" HasUnevenRows="True" RowHeight="150" ItemsSource="{Binding ann}"
-                      RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
-                      >
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

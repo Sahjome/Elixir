@@ -13,7 +13,6 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Image Source="{Binding image}" Aspect="AspectFill"/>
-<<<<<<< HEAD
                 <Grid Grid.Row="1" Padding="2" HorizontalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -22,16 +21,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Margin="0,0" Grid.Column="0" HorizontalOptions="Start" Text="{Binding title}"/>
                     <Label Margin="5,0" Grid.Column="1" Text="{Binding icon}" HorizontalOptions="End"/>
-=======
-                <Grid Grid.Row="1" Padding="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                         
-                    </Grid.ColumnDefinitions>
-                    <Label Margin="10,0" Grid.Column="0" HorizontalOptions="Start" Text="{Binding title}"/>
-                    <Label Margin="10,0" Grid.Column="1" Text="{Binding icon}" HorizontalOptions="End"/>
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+
                 </Grid>
                
             </Grid>

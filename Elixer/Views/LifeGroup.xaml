@@ -12,7 +12,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-<<<<<<< HEAD
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Text="{Binding join}" FontSize="Medium"/>
@@ -22,12 +21,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" Grid.Row="2" Margin="40,10,0,10">
                 <Label Text="Group:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-=======
-            </Grid.RowDefinitions>
-            <Label Text="{Binding join}" FontSize="Medium"/>
-            <StackLayout Orientation="Horizontal" Grid.Row="1" Margin="40,10,0,10" x:Name="type">
-                <Label Text="Register as:" FontSize="Large"/>
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+        
                 <Picker x:Name="group" SelectedIndexChanged="Group_SelectedIndexChanged" 
                                     VerticalOptions="Start" Margin="-2,-8,0,0">
                     <Picker.Items>
@@ -40,11 +34,7 @@
                     </Picker.Items>
                 </Picker>
             </StackLayout>
-<<<<<<< HEAD
             <Button Grid.Row="3" Text="Submit" x:Name="submitBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
-=======
-            <Button Grid.Row="2" Text="Submit" x:Name="submitBtn" TextColor="White" Margin="20" BackgroundColor="PaleVioletRed" Clicked="Submit_Clicked"
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                                 HorizontalOptions="Center" HeightRequest="35"/>
         </Grid>
     </ContentPage.Content>

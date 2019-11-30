@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Elixer.Views.Settings">
-<<<<<<< HEAD
     
     
     <ContentPage.Content>
@@ -88,14 +87,6 @@
             </StackLayout>
         </Grid>
         </RelativeLayout>
-        
-=======
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+
     </ContentPage.Content>
 </ContentPage>

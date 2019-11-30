@@ -4,10 +4,6 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-<<<<<<< HEAD
-=======
-             xmlns:forms1="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
              x:Class="Elixer.Views.MediaDetail">
 
     <ContentPage.Content>
@@ -28,21 +24,13 @@
             </StackLayout>
             <StackLayout Grid.Row="1" x:Name="player" IsVisible="False">
                 <Frame CornerRadius="50" IsClippedToBounds="False">
-<<<<<<< HEAD
                     <!--<forms1:VideoView HeightRequest="202"  HorizontalOptions="FillAndExpand" 
                                   VerticalOptions="FillAndExpand" Source="YourVideoFile"
                                   VideoAspect="AspectFill" WidthRequest="202"/>-->
                 </Frame>
              <!--<Button Text="Play" Clicked="BtnPlayVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>
                 <Button Text="Stop" Clicked="BtnStopVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>-->
-=======
-                    <forms1:VideoView HeightRequest="202"  HorizontalOptions="FillAndExpand" 
-                                  VerticalOptions="FillAndExpand" Source="YourVideoFile"
-                                  VideoAspect="AspectFill" WidthRequest="202"/>
-                </Frame>
-             <Button Text="Play" Clicked="BtnPlayVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>
-                <Button Text="Stop" Clicked="BtnStopVideo_Clicked" BackgroundColor="Silver" TextColor="White"/>
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+
             </StackLayout>
             
         </Grid>

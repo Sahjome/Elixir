@@ -32,7 +32,7 @@ namespace Elixer.Views {
         private global::Xamarin.Forms.Picker memtype;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.StackLayout type1;
+        private global::Xamarin.Forms.StackLayout type;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Picker sex;
