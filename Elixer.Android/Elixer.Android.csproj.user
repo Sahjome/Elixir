@@ -4,10 +4,7 @@
     <SelectedDevice>mologo</SelectedDevice>
     <DefaultDevice>mologo</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
-<<<<<<< HEAD
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-=======
     <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
   </PropertyGroup>
 </Project>

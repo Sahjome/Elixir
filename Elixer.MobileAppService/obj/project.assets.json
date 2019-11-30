@@ -11913,11 +11913,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+      "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
       "projectName": "Elixer.MobileAppService",
-      "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+      "projectPath": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
       "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer.MobileAppService\\obj\\",
+      "outputPath": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -11957,6 +11957,7 @@
             "autoReferenced": true
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -11975,10 +11976,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -63,3 +63,5 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer\obj\Debug\netstandard2.0\XamlC.stamp
 =======
 >>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer\obj\Debug\netstandard2.0\Elixer.dll
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer\obj\Debug\netstandard2.0\Elixer.pdb

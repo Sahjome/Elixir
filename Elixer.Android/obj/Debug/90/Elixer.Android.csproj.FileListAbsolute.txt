@@ -28,7 +28,6 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\fla
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3b01d6269d23c3bdae5552cb568aa76d61815eda.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\8b382026ea52970264109358c8beabdac8e7a4b3.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3da079fae0002263dc31f8b0f145de09387d78c3.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d52bef6fa1bc1fbbff8009dc48ac476e78252347.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9f0c489204ac198f4b9ec389a35df786f2f74dd0.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\f11cef2b0b7c433d35e25c41de485b4692ab4ef4.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\05653eeea77b20e3a810b4ec368cba8ea6abfb5e.stamp
@@ -40,7 +39,6 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\fla
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3b01d6269d23c3bdae5552cb568aa76d61815eda.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\8b382026ea52970264109358c8beabdac8e7a4b3.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3da079fae0002263dc31f8b0f145de09387d78c3.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d52bef6fa1bc1fbbff8009dc48ac476e78252347.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9f0c489204ac198f4b9ec389a35df786f2f74dd0.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\f11cef2b0b7c433d35e25c41de485b4692ab4ef4.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\05653eeea77b20e3a810b4ec368cba8ea6abfb5e.flata
@@ -177,10 +175,7 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\and
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\FormsViewGroup.pdb
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\Java.Interop.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\Mono.Android.dll
-<<<<<<< HEAD
-=======
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\Mono.Android.pdb
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\Mono.Security.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\netstandard.dll
@@ -548,7 +543,6 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\sta
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\bin\Debug\Elixer.dll.mdb
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\res\drawable\clf.png
-<<<<<<< HEAD
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\linksrc\BouncyCastle.Crypto.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\linksrc\Common.Logging.Core.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\linksrc\Common.Logging.dll
@@ -662,23 +656,15 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\and
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md5346fa1095291af56719b646c6eee0f6c\VideoViewSavedState.java
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\res\drawable\clf_small.png
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\31d13f2352c6d6443ebd2d30bc48f2f0350cf35f.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1035be2203c48a2fafbb50d7ddf2dffb3975416c.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d1d9f6d49db4b1439c04ced25cdd83ba7a2071c0.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\22fc330a10edf9e3d696256cbfc1cdb0b962a2c1.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3b01d6269d23c3bdae5552cb568aa76d61815eda.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9f0c489204ac198f4b9ec389a35df786f2f74dd0.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\10192ede78385fcf9d69fda67e56ee4dad2765d4.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\f11cef2b0b7c433d35e25c41de485b4692ab4ef4.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9a6844e10defd62cabb59599e1bfe5465b9ca07c.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\fbba4f4bc8c3419dac28f05bc26722b7a8abda97.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\31d13f2352c6d6443ebd2d30bc48f2f0350cf35f.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1035be2203c48a2fafbb50d7ddf2dffb3975416c.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d1d9f6d49db4b1439c04ced25cdd83ba7a2071c0.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\22fc330a10edf9e3d696256cbfc1cdb0b962a2c1.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\3b01d6269d23c3bdae5552cb568aa76d61815eda.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9f0c489204ac198f4b9ec389a35df786f2f74dd0.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\10192ede78385fcf9d69fda67e56ee4dad2765d4.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\f11cef2b0b7c433d35e25c41de485b4692ab4ef4.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9a6844e10defd62cabb59599e1bfe5465b9ca07c.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\fbba4f4bc8c3419dac28f05bc26722b7a8abda97.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\res\xml\file_paths.xml
@@ -690,29 +676,24 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\and
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\assets\Plugin.Permissions.dll
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md54cd65ac53ae710bff80022afc423e0f3\MediaPickerActivity.java
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md52784b6b6564df579ab09ba8bad5c54dd\ActivityLifecycleContextListener.java
-=======
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d06458b794ac66a92b68b11b0142a00aab0c5819.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1ee1f35b4c2cb42d292b29690e8b33f4b36d152f.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d1d9f6d49db4b1439c04ced25cdd83ba7a2071c0.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\cedd1ed2878f5102eff3187cf432239bf2ff6ab2.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1887c679583ea51f96a6dca7045cf4383dd1a2e6.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9b2baea0d757cb246744bf81cdcae596333dfe42.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\165d5c93a9a7018f61fa4412ddc270d66d55f4c7.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\ac73cbb4541a2526e310a4f1e2be33b756aac306.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\96d1276650949d7cd651f96fa04cb3394eceb8df.stamp
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\fbba4f4bc8c3419dac28f05bc26722b7a8abda97.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\0d37aa632aa4c64fd1a9692099216ee4426580e0.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d780d7612c14effc7444e4ece848bb1d4d22d260.stamp
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d06458b794ac66a92b68b11b0142a00aab0c5819.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1ee1f35b4c2cb42d292b29690e8b33f4b36d152f.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d1d9f6d49db4b1439c04ced25cdd83ba7a2071c0.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\cedd1ed2878f5102eff3187cf432239bf2ff6ab2.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\1887c679583ea51f96a6dca7045cf4383dd1a2e6.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\9b2baea0d757cb246744bf81cdcae596333dfe42.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\165d5c93a9a7018f61fa4412ddc270d66d55f4c7.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\ac73cbb4541a2526e310a4f1e2be33b756aac306.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\96d1276650949d7cd651f96fa04cb3394eceb8df.flata
-C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\fbba4f4bc8c3419dac28f05bc26722b7a8abda97.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\0d37aa632aa4c64fd1a9692099216ee4426580e0.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\flata\d780d7612c14effc7444e4ece848bb1d4d22d260.flata
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\linksrc\ExoPlayer.Core.dll
@@ -791,4 +772,8 @@ C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\and
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md5bc84c97450f22337f6e1991a43223866\MediaControllerCallback.java
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md5bc84c97450f22337f6e1991a43223866\MediaSessionCallback.java
 C:\Users\Sahjome\Documents\Sources\Elixer\Elixir\Elixer.Android\obj\Debug\90\android\src\md5bc84c97450f22337f6e1991a43223866\NotificationListener.java
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer.Android\obj\Debug\90\build.props
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer.Android\obj\Debug\90\adb.props
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer.Android\obj\Debug\90\Elixer.Android.dll
+C:\Users\Sahjome\Documents\Projects\Elixir\Elixer.Android\obj\Debug\90\Elixer.Android.pdb
