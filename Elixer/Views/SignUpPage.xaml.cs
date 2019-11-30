@@ -116,12 +116,7 @@ namespace Elixer.Views
 
         }
 
-<<<<<<< HEAD
         protected override void OnAppearing()
-=======
-       
-        public async void Submit_Clicked(object sender, EventArgs e)
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         {
             submit.Clicked += Submit_Clicked;
         }
@@ -133,11 +128,7 @@ namespace Elixer.Views
             //check entry
             if (string.IsNullOrWhiteSpace(fname.Text) || string.IsNullOrWhiteSpace(sname.Text) || 
                 string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(phone.Text) || 
-<<<<<<< HEAD
                 string.IsNullOrWhiteSpace(pass.Text) || string.Equals(uname.Text, "Pastor") || string.IsNullOrWhiteSpace(uname.Text) || string.IsNullOrEmpty(_sex))
-=======
-                string.IsNullOrWhiteSpace(pass.Text) || string.IsNullOrWhiteSpace(uname.Text) || string.IsNullOrEmpty(_sex))
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
             {
                 await DisplayAlert("Error", "Please make sure all required fields are filled properly ", "OK");
                 Required();
@@ -150,7 +141,6 @@ namespace Elixer.Views
                     //member = memtype.SelectedItem.ToString();//for member type
                     //verify that all the credentials are not in db and insert thru api 
                     string status = memtype.SelectedItem.ToString();
-<<<<<<< HEAD
                     string address = (string.IsNullOrEmpty(raddy.Text)) ? (haddy.Text) : raddy.Text;
                     Dictionary<string, object> prof = new Dictionary<string, object>
                     {
@@ -166,22 +156,6 @@ namespace Elixer.Views
                         { "grad", grad.Date },
                         { "othername", oname.Text },
                         { "address", address }
-=======
-                    Profiles prof = new Profiles
-                    {
-                        Firstname = fname.Text = Details.Firstname,
-                        Surname = sname.Text = Details.Surname,
-                        Email = email.Text = Details.Email,
-                        Phone = phone.Text = Details.Phone,
-                        Username = uname.Text = Details.Username,
-                        Sex = _sex = Details.Sex,
-                        DOB = dob.Date = Details.DOB,
-                        Status = status = Details.Status,
-                        Dept = dept.Text = Details.Dept,
-                        Grad = grad.Date = Details.Grad,
-                        Othername = oname.Text = Details.Othername,
-                        Address = raddy.Text = haddy.Text = Details.Address
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                     };
                     var json = JsonConvert.SerializeObject(prof);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -194,7 +168,6 @@ namespace Elixer.Views
                     };
                     if (res.Result == data["Success"])
                     {
-<<<<<<< HEAD
                         Application.Current.Properties["Firstname"] = fname.Text;
                         Application.Current.Properties["Surname"] = sname.Text;
                         Application.Current.Properties["Email"] = email.Text;
@@ -212,10 +185,6 @@ namespace Elixer.Views
                         await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
                         //await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
                         Application.Current.MainPage = new LoginPage();
-=======
-                        await DisplayAlert("Success", "Welcome " + fname.Text + " " + oname.Text + " " + sname.Text, "OK");
-                        await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
                     }
                     else
@@ -235,10 +204,6 @@ namespace Elixer.Views
             Application.Current.MainPage = new LoginPage();
         }
 
-<<<<<<< HEAD
         public ICommand clickCommand => new Command(async () => await Clickred());
-=======
-        public ICommand ClickCommand => new Command(async () => await Clickred());
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     }
 }

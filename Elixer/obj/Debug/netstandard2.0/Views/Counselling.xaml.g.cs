@@ -17,7 +17,6 @@ namespace Elixer.Views {
     public partial class Counselling : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-<<<<<<< HEAD
         private global::Xamarin.Forms.Editor group;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -28,10 +27,6 @@ namespace Elixer.Views {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Counselling));
             group = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Editor>(this, "group");
             submitBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "submitBtn");
-=======
-        private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Counselling));
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         }
     }
 }

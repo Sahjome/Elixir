@@ -21,19 +21,12 @@ namespace Elixer.Views
         {
             InitializeComponent();
             BindingContext = join;
-<<<<<<< HEAD
             string name = surname + ", " + firstname + " " + "othername";
             BindingContext = name;
         }
         string grp;
 
         void Group_SelectedIndexChanged(object sender, EventArgs e)
-=======
-        }
-        string grp;
-
-        void Mem_SelectedIndexChanged(object sender, EventArgs e)
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
         {
             var picker = (Picker)sender;
             int sel = picker.SelectedIndex;
@@ -46,13 +39,9 @@ namespace Elixer.Views
             "opportunity for you to connect with other Christlovers in a comfortable and relaxed atmosphere. In a LifeGroup, " +
             "you have a close network of people to pray with and grow together in understanding God’s word.\r\nReady " +
             "to join? Fill the Sign-Up Form to get started.";
-<<<<<<< HEAD
         string firstname = Application.Current.Properties["Firstname"].ToString();
         string surname = Application.Current.Properties["Surname"].ToString();
         string othername = Application.Current.Properties["Othername"].ToString();
-=======
-        
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
         protected override void OnAppearing()
         {
@@ -65,24 +54,16 @@ namespace Elixer.Views
             {
                 if (string.IsNullOrEmpty(grp))
                 {
-<<<<<<< HEAD
                     await DisplayAlert("Response", "Please check your input.", "OK");
-=======
-                    await DisplayAlert("Response","Please check your input.","OK");
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 }
                 else
                 {
                     GroupClass clas = new GroupClass
                     {
                         Group = grp,
-<<<<<<< HEAD
                         Firstname = Details.Username = firstname,
                         Surname = Details.Surname = surname,
                         Othername = Details.Othername = othername
-=======
-                        Username = Details.Username
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                     };
                     var json = JsonConvert.SerializeObject(clas);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -95,10 +76,7 @@ namespace Elixer.Views
                     };
                     if (res.Result == data["Success"])
                     {
-<<<<<<< HEAD
                         Application.Current.Properties["LGroup"] = grp;
-=======
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                         await DisplayAlert("Success", "Application sent.","OK");   
                     }
                     else

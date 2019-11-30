@@ -23,10 +23,6 @@ namespace Elixer.ViewModels
             //OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
 
-<<<<<<< HEAD
         //public ICommand clickCommand = new Command(() => return  { get; }
-=======
-        //public ICommand OpenWebCommand { get; }
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
     }
 }

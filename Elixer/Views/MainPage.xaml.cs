@@ -31,7 +31,6 @@ namespace Elixer.Views
             {
                 if (!MenuPages.ContainsKey(id))
                 {
-<<<<<<< HEAD
                     switch (id)
                     {
                         case (int)MenuItemType.About:
@@ -93,32 +92,6 @@ namespace Elixer.Views
                             MenuPages.Add(id, new NavigationPage(new Settings()));
                             break;
                     }
-=======
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                        break;
-                    case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;
-                    case (int)MenuItemType.Giving:
-                        MenuPages.Add(id, new NavigationPage(new Giving()));
-                        break;
-                    case (int)MenuItemType.Announcements:
-                        MenuPages.Add(id, new NavigationPage(new Announcement()));
-                        break;
-                    case (int)MenuItemType.Media:
-                        MenuPages.Add(id, new NavigationPage(new Media()));
-                        break;
-                    case (int)MenuItemType.Groups:
-                        MenuPages.Add(id, new NavigationPage(new Groups()));
-                        break;
-                    case (int)MenuItemType.Counselling:
-                        MenuPages.Add(id, new NavigationPage(new Counselling()));
-                        break;
-                    case (int)MenuItemType.Settings:
-                        MenuPages.Add(id, new NavigationPage(new Settings()));
-                        break;
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
                 }
             }
 

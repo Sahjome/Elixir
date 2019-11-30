@@ -1,24 +1,9 @@
 ﻿using Elixer.Models;
 using System;
-<<<<<<< HEAD
 using System.Text;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
-=======
-using GemBox.Pdf;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using MediaManager;
-using System.Drawing.Imaging;
-using iText.Kernel.Pdf;
-using iText.Kernel.Pdf.Canvas.Parser;
-using iText.Kernel;
-using iText.Kernel.Pdf.Canvas.Parser.Listener;
-using GemBox.Document;
-using DocumentFormat.OpenXml.Wordprocessing;
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
 namespace Elixer.ViewModels
 {
@@ -83,7 +68,6 @@ namespace Elixer.ViewModels
             return text.ToString();
         }
 
-<<<<<<< HEAD
         //void BtnPlayVideo_Clicked(object sender, EventArgs e)
         //{
         //    CrossMediaManager.Current.Play(media.file);
@@ -93,17 +77,6 @@ namespace Elixer.ViewModels
         //{
         //    CrossMediaManager.Current.Stop();
         //}
-=======
-        void BtnPlayVideo_Clicked(object sender, EventArgs e)
-        {
-            CrossMediaManager.Current.Play(media.file);
-        }
-
-        void BtnStopVideo_Clicked(object sender, EventArgs e)
-        {
-            CrossMediaManager.Current.Stop();
-        }
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
         
 

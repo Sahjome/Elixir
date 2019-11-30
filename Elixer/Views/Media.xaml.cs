@@ -26,11 +26,7 @@ namespace Elixer.Views
             if (item == null)
                 return;
 
-<<<<<<< HEAD
             await Navigation.PushModalAsync(new MediaDetail(new MediaDetailViewModel(item)));
-=======
-            await Navigation.PushAsync(new MediaDetail(new MediaDetailViewModel(item)));
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
 
             // Manually deselect item.
             listView.SelectedItem = null;

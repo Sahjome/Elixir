@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj": {}
+    "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj": {
+    "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+        "projectUniqueName": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
         "projectName": "Elixer.MobileAppService",
-        "projectPath": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
+        "projectPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\Elixer.MobileAppService.csproj",
         "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\obj\\",
+        "outputPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer.MobileAppService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

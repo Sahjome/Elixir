@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj": {}
+    "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj": {
+    "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
+        "projectUniqueName": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj",
         "projectName": "Elixer",
-        "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
+        "projectPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj",
         "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\obj\\",
+        "outputPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -48,8 +48,6 @@
               "target": "Package",
               "version": "[2.9.1, )"
             },
-<<<<<<< HEAD
-=======
             "GemBox.Document": {
               "target": "Package",
               "version": "[31.0.0.1035, )"
@@ -58,7 +56,6 @@
               "target": "Package",
               "version": "[13.0.0.1052, )"
             },
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -69,19 +66,17 @@
               "target": "Package",
               "version": "[12.0.2, )"
             },
-<<<<<<< HEAD
             "Octane.Xam.VideoPlayer": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Xam.Plugin.Media": {
-              "target": "Package",
-              "version": "[4.0.1.5, )"
-=======
             "Plugin.MediaManager": {
               "target": "Package",
               "version": "[0.8.11, )"
->>>>>>> a8d0f6e84b26199dd65d5ca307869bd631eaab3b
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.0.1.5, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -101,10 +96,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

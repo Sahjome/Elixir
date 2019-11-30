@@ -47,6 +47,27 @@
           "lib/netstandard1.3/DocumentFormat.OpenXml.dll": {}
         }
       },
+      "GemBox.Document/31.0.0.1035": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GemBox.Document.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GemBox.Document.dll": {}
+        }
+      },
+      "GemBox.Pdf/13.0.0.1052": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/GemBox.Pdf.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GemBox.Pdf.dll": {}
+        }
+      },
       "itext7/7.1.8": {
         "type": "package",
         "dependencies": {
@@ -239,6 +260,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Octane.Xamarin.Forms.VideoPlayer.dll": {}
+        }
+      },
+      "Plugin.MediaManager/0.8.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediaManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediaManager.dll": {}
         }
       },
       "Plugin.Permissions/3.0.0.12": {
@@ -608,6 +638,15 @@
         },
         "compile": {
           "ref/netstandard1.5/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Dynamic.Runtime/4.0.11": {
@@ -1744,6 +1783,42 @@
         "lib/netstandard1.3/DocumentFormat.OpenXml.xml"
       ]
     },
+    "GemBox.Document/31.0.0.1035": {
+      "sha512": "iAvjuhWRe9dNxvF24SN9fYl/IcUe/EWh1s/Ey/5V3zlI1JwzRyUZGIeTOygKofv3klWqfXjBpRigmkjdZ9zHNg==",
+      "type": "package",
+      "path": "gembox.document/31.0.0.1035",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "gembox.document.31.0.0.1035.nupkg.sha512",
+        "gembox.document.nuspec",
+        "lib/net35/GemBox.Document.dll",
+        "lib/net35/GemBox.Document.xml",
+        "lib/netstandard2.0/GemBox.Document.dll",
+        "lib/netstandard2.0/GemBox.Document.xml",
+        "licenses/EULA.txt",
+        "licenses/ThirdPartyCodeLicenses.txt"
+      ]
+    },
+    "GemBox.Pdf/13.0.0.1052": {
+      "sha512": "Ol/GxFF0xERtbCKlIrBCtPExD+clpYq8gR/QL9LomDmjakdY/6S5ohZWEddKshCXM6gXrqVN7MmGWl2qgTZqfw==",
+      "type": "package",
+      "path": "gembox.pdf/13.0.0.1052",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "gembox.pdf.13.0.0.1052.nupkg.sha512",
+        "gembox.pdf.nuspec",
+        "lib/net35/GemBox.Pdf.dll",
+        "lib/net35/GemBox.Pdf.xml",
+        "lib/netstandard2.0/GemBox.Pdf.dll",
+        "lib/netstandard2.0/GemBox.Pdf.xml",
+        "licenses/EULA.txt",
+        "licenses/ThirdPartyCodeLicenses.txt"
+      ]
+    },
     "itext7/7.1.8": {
       "sha512": "B5uuZSZDmGzNZd/tB8mSW+iJDaSWSC3N2KqghSzmP5EzkJwRQvfRcyqvxGq5qcE7v4nX/EKB4b97QL5jPTVRsA==",
       "type": "package",
@@ -2154,6 +2229,46 @@
         "lib/uap10.0/Octane.Xamarin.Forms.VideoPlayer.xml",
         "octane.xam.videoplayer.3.1.0.nupkg.sha512",
         "octane.xam.videoplayer.nuspec"
+      ]
+    },
+    "Plugin.MediaManager/0.8.11": {
+      "sha512": "X0Zi49UIu93EePMVCVKDtU955mX7LFed1N+kmn/BnMsO98G48UCnqz2UzOzcV4Qdp85hfAzA1PPlWmIbLgaUzQ==",
+      "type": "package",
+      "path": "plugin.mediamanager/0.8.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/monoandroid90/MediaManager.dll",
+        "lib/monoandroid90/MediaManager.pdb",
+        "lib/monoandroid90/MediaManager.xml",
+        "lib/net472/MediaManager.dll",
+        "lib/net472/MediaManager.pdb",
+        "lib/net472/MediaManager.xml",
+        "lib/netstandard2.0/MediaManager.dll",
+        "lib/netstandard2.0/MediaManager.pdb",
+        "lib/netstandard2.0/MediaManager.xml",
+        "lib/tizen40/MediaManager.dll",
+        "lib/tizen40/MediaManager.pdb",
+        "lib/tizen40/MediaManager.xml",
+        "lib/uap10.0.16299/MediaManager.dll",
+        "lib/uap10.0.16299/MediaManager.pdb",
+        "lib/uap10.0.16299/MediaManager.pri",
+        "lib/uap10.0.16299/MediaManager.xml",
+        "lib/uap10.0.16299/MediaManager/MediaManager.xr.xml",
+        "lib/uap10.0.16299/MediaManager/Platforms/Uap/Video/VideoView.xaml",
+        "lib/xamarinios10/MediaManager.dll",
+        "lib/xamarinios10/MediaManager.pdb",
+        "lib/xamarinios10/MediaManager.xml",
+        "lib/xamarinmac20/MediaManager.dll",
+        "lib/xamarinmac20/MediaManager.pdb",
+        "lib/xamarinmac20/MediaManager.xml",
+        "lib/xamarintvos10/MediaManager.dll",
+        "lib/xamarintvos10/MediaManager.pdb",
+        "lib/xamarintvos10/MediaManager.xml",
+        "plugin.mediamanager.0.8.11.nupkg.sha512",
+        "plugin.mediamanager.nuspec",
+        "readme.txt"
       ]
     },
     "Plugin.Permissions/3.0.0.12": {
@@ -2998,6 +3113,39 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.tracing.4.3.0.nupkg.sha512",
         "system.diagnostics.tracing.nuspec"
+      ]
+    },
+    "System.Drawing.Common/4.5.1": {
+      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.1.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
@@ -6283,9 +6431,12 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "DocumentFormat.OpenXml >= 2.9.1",
+      "GemBox.Document >= 31.0.0.1035",
+      "GemBox.Pdf >= 13.0.0.1052",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
       "Octane.Xam.VideoPlayer >= 3.1.0",
+      "Plugin.MediaManager >= 0.8.11",
       "Xam.Plugin.Media >= 4.0.1.5",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.2.0.848062",
@@ -6301,11 +6452,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
+      "projectUniqueName": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj",
       "projectName": "Elixer",
-      "projectPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\Elixer.csproj",
+      "projectPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\Elixer.csproj",
       "packagesPath": "C:\\Users\\Sahjome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sahjome\\Documents\\Sources\\Elixer\\Elixir\\Elixer\\obj\\",
+      "outputPath": "c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6342,6 +6493,14 @@
             "target": "Package",
             "version": "[2.9.1, )"
           },
+          "GemBox.Document": {
+            "target": "Package",
+            "version": "[31.0.0.1035, )"
+          },
+          "GemBox.Pdf": {
+            "target": "Package",
+            "version": "[13.0.0.1052, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -6355,6 +6514,10 @@
           "Octane.Xam.VideoPlayer": {
             "target": "Package",
             "version": "[3.1.0, )"
+          },
+          "Plugin.MediaManager": {
+            "target": "Package",
+            "version": "[0.8.11, )"
           },
           "Xam.Plugin.Media": {
             "target": "Package",
@@ -6378,11 +6541,25 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file c:\\Users\\Sahjome\\Documents\\Projects\\Elixir\\Elixer\\obj\\Elixer.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
